@@ -60,21 +60,21 @@
 					<div class="row col-lg-10 offset-lg-1 col-md-12 offset-md-0 align-items-center text-center" data-animate="fadeInUp" data-delay=".3">
 
 						<div class="col-sm-12 text no-pd" id="affiliate_content">
-							<p>Продвигайте в соцсетях и получайте 5% сразу после завершения. Вы получите на вашу почту сообщение.</p>
-							<p>Ваша реферальная ссылка: <b id="affiliate_url"></b></p>
-							<h3>Your WGD balance is</h3>
-							<div class="tokens"></div>
+							<p>Ваша реферальная ссылка:<br><b id="affiliate_url"></b></p>
+							<p>Продвигайте ее в соцсетях и получайте 5% сразу после завершения. Вы получите на вашу почту сообщение.</p>
+							<h3>Your coming ETH reward is</h3>
+							<div class="eth_reward"></div>
 							<br>
 							<br>
 							<div class="col-sm-12 text no-pd">
-								<p class="text-center">Reward will be distributed within 21 days post Token Sale (coming 31 July).
+								<p class="text-center">Reward will be distributed вскоре после завершения Special Round.
 									<br><br>Have questions? Contact us on webRunes <a href="https://t.me/webRunesGroup" target="_blank">Telegram group</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i></p>
 								<br>
 							</div>
 						</div>
 
 						<div class="col-sm-12 text no-pd" id="content">
-							<h3>Your WGD balance is
+							<h3>Your Airdrop WGD balance is
 								<br><span id="empty"><h1>0</h1><h6>unregistered user</h6></span>
 								<br><span id="reward">0</span>
 								<br>
@@ -143,9 +143,10 @@
 				document.getElementById('affiliate_content').style.transition = 'opacity 2000ms';
 
 				document.addEventListener("DOMContentLoaded", function() {
+					var eth_reward;
 					$.getJSON("https://spreadsheets.google.com/feeds/list/1YqDOMfPw7Xd5rryouF931Y3aSfUboNGkip7qMdvY3BQ/2/public/values?alt=json", function(data) {
-						tokensleft = data.feed.entry[0]['gsx$total']['$t'];
-						$('.tokens').prepend('<b>'+tokensleft+'</b>');
+						eth_reward = data.feed.entry[0]['gsx$total']['$t'];
+						$('.eth_reward').prepend('<b>'+eth_reward+'</b>');
 					});
 				});
 			}
@@ -179,7 +180,7 @@
 				document.getElementById('error').style.transition = 'opacity 1000ms';
 			} else {
 				affiliate_balance_show();
-				document.getElementById("affiliate_url").innerHTML = '<a href="https://wr.io/supporter_round?friend='+email_address.value+'" _blank="target">https://wr.io/supporter_round?friend='+email_address.value+'</a></b>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i>';
+				document.getElementById("affiliate_url").innerHTML = '<a href="https://wr.io/supporter_round/?friend='+email_address.value+'" _blank="target">https://wr.io/supporter_round?friend='+email_address.value+'</a></b>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i>';
 				document.getElementById('part').style.display = 'none';
 			}
 		}
