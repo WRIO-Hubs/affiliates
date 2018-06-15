@@ -137,13 +137,6 @@
 	<script src="https://wr.io/assets/js/script.js"></script>
 
 	<script>
-		function opacity()
-		{
-			document.getElementsByClassName('opacity').style.opacity = '0';
-			document.getElementsByClassName('opacity').style.opacity = '100';
-			document.getElementsByClassName('opacity').style.transition = 'opacity 2000ms';
-		}
-
 
 		function affiliate_balance_show()
 			{
@@ -151,7 +144,9 @@
 				document.getElementById("airdrop_btn").style.display = "block";
 				document.getElementById("content").style.display = "none";
 				document.getElementById("affiliate_content").style.display = "block";
-				opacity();
+				document.getElementsByClassName('opacity').style.opacity = '0';
+				document.getElementsByClassName('opacity').style.opacity = '100';
+				document.getElementsByClassName('opacity').style.transition = 'opacity 2000ms';
 
 				document.addEventListener("DOMContentLoaded", function() {
 					var eth_reward;
@@ -168,7 +163,9 @@
 				document.getElementById("affiliate_btn").style.display = "block";
 				document.getElementById("affiliate_content").style.display = "none";
 				document.getElementById("content").style.display = "block";
-				opacity();
+				document.getElementsByClassName('opacity').style.opacity = '0';
+				document.getElementsByClassName('opacity').style.opacity = '100';
+				document.getElementsByClassName('opacity').style.transition = 'opacity 2000ms';
 
 				$.ajax("https://docs.google.com/spreadsheets/d/10yfHohsWi8DZSuyorxPbh-k3A4MzKsZIzssyGHFE46w/gviz/tq?tqx=out:html&tq=SELECT+N+WHERE+B+CONTAINS+%27" + email_address.value + "%27").done(function(result){
 				$('#reward').html(result).show();
