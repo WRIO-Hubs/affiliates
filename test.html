@@ -61,7 +61,7 @@
 
 						<div class="col-sm-12 text no-pd" id="affiliate_content">
 							<p>Продвигайте в соцсетях и получайте 5% сразу после завершения. Вы получите на вашу почту сообщение.</p>
-							<p>Ваша реферальная ссылка: <span id="affiliate_url"></span></p>
+							<p>Ваша реферальная ссылка: <b id="affiliate_url"></b></p>
 							<h3>Your WGD balance is</h3>
 							<div class="tokens"></div>
 							<br>
@@ -181,7 +181,7 @@
 				document.getElementById('error').style.transition = 'opacity 1000ms';
 			} else {
 				affiliate_balance_show();
-				document.getElementById("affiliate_url").innerHTML = '<b><a href="https://wr.io/supporter_round?friend=email@address.com" _blank="target">https://wr.io/supporter_round?friend='+email_address+'</a></b>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i>';
+				document.getElementById("affiliate_url").innerHTML = '<a href="https://wr.io/supporter_round?friend='+email_address.value+'" _blank="target">https://wr.io/supporter_round?friend='+email_address.value+'</a></b>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i>';
 				document.getElementById('part').style.display = 'none';
 			}
 		}
