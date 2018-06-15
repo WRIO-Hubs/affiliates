@@ -24,10 +24,11 @@
 	#content table td{font-size:32px}
 	#content #reward td{font-size:140px;color:#7a0fff;text-align:center}
 	#content #empty{color:#7a0fff;position:absolute;top:60px;display:block;margin:0 auto;width:100%}
-	#affiliate_content,#content{display:none;opacity:0;transition:opacity 1000ms}
+	#affiliate_content,#content{display:none}
 	#error{opacity:0;transition:opacity 1000ms;position:relative;top:-12px}
 	#email_address{max-width:300px}
 	#affiliate_btn,#airdrop_btn{display:none}
+	.opacity{opacity:0;transition:opacity 2000ms}
 	</style>
 </head>
 
@@ -60,34 +61,38 @@
 					<div class="row col-lg-10 offset-lg-1 col-md-12 offset-md-0 align-items-center text-center" data-animate="fadeInUp" data-delay=".3">
 
 						<div class="col-sm-12 text no-pd" id="affiliate_content">
-							<p>Ваша реферальная ссылка:<br><b id="affiliate_url"></b></p>
-							<p>Продвигайте ее в соцсетях и получайте 5% сразу после завершения. Вы получите на вашу почту сообщение.</p>
-							<h3>Your coming ETH reward is</h3>
-							<div class="eth_reward"></div>
-							<br>
-							<br>
-							<div class="col-sm-12 text no-pd">
-								<p class="text-center">Reward will be distributed вскоре после завершения Special Round.
-									<br><br>Have questions? Contact us on webRunes <a href="https://t.me/webRunesGroup" target="_blank">Telegram group</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i></p>
+							<div class="opacity">
+								<p>Ваша реферальная ссылка:<br><b id="affiliate_url"></b></p>
+								<p>Продвигайте ее в соцсетях и получайте 5% сразу после завершения. Вы получите на вашу почту сообщение.</p>
+								<h3>Your coming ETH reward is</h3>
+								<div class="eth_reward"></div>
 								<br>
+								<br>
+								<div class="col-sm-12 text no-pd">
+									<p class="text-center">Reward will be distributed вскоре после завершения Special Round.
+										<br><br>Have questions? Contact us on webRunes <a href="https://t.me/webRunesGroup" target="_blank">Telegram group</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i></p>
+									<br>
+								</div>
 							</div>
 						</div>
 
 						<div class="col-sm-12 text no-pd" id="content">
-							<h3>Your Airdrop WGD balance is
-								<br><span id="empty"><h1>0</h1><h6>unregistered user</h6></span>
-								<br><span id="reward">0</span>
+							<div class="opacity">
+								<h3>Your Airdrop WGD balance is
+									<br><span id="empty"><h1>0</h1><h6>unregistered user</h6></span>
+									<br><span id="reward">0</span>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br></h3>
 								<br>
 								<br>
-								<br>
-								<br>
-								<br></h3>
-							<br>
-							<br>
-							<div class="col-sm-12 text no-pd">
-								<p class="text-center">Reward will be distributed within 21 days post Token Sale (coming 31 July).
-									<br><br>Have questions? Contact us on webRunes <a href="https://t.me/webRunesGroup" target="_blank">Telegram group</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i></p>
-								<br>
+								<div class="col-sm-12 text no-pd">
+									<p class="text-center">Reward will be distributed within 21 days post Token Sale (coming 31 July).
+										<br><br>Have questions? Contact us on webRunes <a href="https://t.me/webRunesGroup" target="_blank">Telegram group</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i></p>
+									<br>
+								</div>
 							</div>
 						</div>
 
@@ -132,15 +137,21 @@
 	<script src="https://wr.io/assets/js/script.js"></script>
 
 	<script>
+		function opacity()
+		{
+			document.getElementsByClassName('opacity').style.opacity = '0';
+			document.getElementsByClassName('opacity').style.opacity = '100';
+			document.getElementsByClassName('opacity').style.transition = 'opacity 2000ms';
+		}
+
+
 		function affiliate_balance_show()
 			{
 				document.getElementById("affiliate_btn").style.display = "none";
 				document.getElementById("airdrop_btn").style.display = "block";
-
 				document.getElementById("content").style.display = "none";
 				document.getElementById("affiliate_content").style.display = "block";
-				document.getElementById('affiliate_content').style.opacity = '100';
-				document.getElementById('affiliate_content').style.transition = 'opacity 2000ms';
+				opacity();
 
 				document.addEventListener("DOMContentLoaded", function() {
 					var eth_reward;
@@ -157,8 +168,7 @@
 				document.getElementById("affiliate_btn").style.display = "block";
 				document.getElementById("affiliate_content").style.display = "none";
 				document.getElementById("content").style.display = "block";
-				document.getElementById('content').style.opacity = '100';
-				document.getElementById('content').style.transition = 'opacity 2000ms';
+				opacity();
 
 				$.ajax("https://docs.google.com/spreadsheets/d/10yfHohsWi8DZSuyorxPbh-k3A4MzKsZIzssyGHFE46w/gviz/tq?tqx=out:html&tq=SELECT+N+WHERE+B+CONTAINS+%27" + email_address.value + "%27").done(function(result){
 				$('#reward').html(result).show();
