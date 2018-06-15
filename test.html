@@ -17,11 +17,11 @@
 	<link rel="stylesheet" href="https://wr.io/assets/css/wrioos.css">
 	<style>
 	html,body{overflow:inherit!important}
-	table{margin:0 auto;position:absolute;top:40px;background-color:#10122d;width:100%}
-	table,table td{border:none}
-	table tr:first-child{display:none}
-	table tr{background-color:transparent!important}
-	table td{font-size:32px}
+	#content table{margin:0 auto;position:absolute;top:40px;background-color:#10122d;width:100%}
+	#content table,#content table td{border:none}
+	#content table tr:first-child{display:none}
+	#content table tr{background-color:transparent!important}
+	#content table td{font-size:32px}
 	#affiliate_balance,#content{display:none;opacity:0;transition:opacity 1000ms}
 	#reward td{font-size:140px;color:#7a0fff;text-align:center}
 	#empty{color:#7a0fff;position:absolute;top:60px;display:block;margin:0 auto;width:100%}
@@ -61,6 +61,7 @@
 
 						<div class="col-sm-12 text no-pd" id="affiliate_content">
 							<h3>Your WGD balance is</h3>
+							<div class="tokens"></div>
 							<br>
 							<br>
 							<div class="col-sm-12 text no-pd">
@@ -139,6 +140,13 @@
 				document.getElementById('affiliate_content').style.opacity = '0';
 				document.getElementById('affiliate_content').style.opacity = '100';
 				document.getElementById('affiliate_content').style.transition = 'opacity 2000ms';
+
+				document.addEventListener("DOMContentLoaded", function() {
+					$.getJSON("https://spreadsheets.google.com/feeds/list/1YqDOMfPw7Xd5rryouF931Y3aSfUboNGkip7qMdvY3BQ/2/public/values?alt=json", function(data) {
+						tokensleft = data.feed.entry[0]['gsx$total']['$t'];
+						$('.tokens').prepend('<b>'+tokensleft+'</b>');
+					});
+				});
 			}
 
 		function airdrop_balance_show()
