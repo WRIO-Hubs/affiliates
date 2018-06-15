@@ -27,7 +27,7 @@
 	#empty{color:#7a0fff;position:absolute;top:60px;display:block;margin:0 auto;width:100%}
 	#error{opacity:0;transition:opacity 1000ms;position:relative;top:-12px}
 	#email_address{max-width:300px}
-	#affiliate_btn,#airdrop_balance{display:none}
+	#affiliate_btn,#airdrop_btn,#airdrop_balance{display:none}
 	</style>
 </head>
 
@@ -182,15 +182,13 @@
 				document.getElementById('airdrop_balance').style.opacity = '0';
 				document.getElementById('airdrop_balance').style.opacity = '100';
 				document.getElementById('airdrop_balance').style.transition = 'opacity 2000ms';
-			}
 
-		function result_show(){
-		$.ajax("https://docs.google.com/spreadsheets/d/10yfHohsWi8DZSuyorxPbh-k3A4MzKsZIzssyGHFE46w/gviz/tq?tqx=out:html&tq=SELECT+N+WHERE+B+CONTAINS+%27" + email_address.value + "%27").done(function(result){
-			$('#reward').html(result).show();
-			document.getElementById('content').style.opacity = '100';
-			document.getElementById('content').style.transition = 'opacity 1000ms';
-		});
-		}
+				$.ajax("https://docs.google.com/spreadsheets/d/10yfHohsWi8DZSuyorxPbh-k3A4MzKsZIzssyGHFE46w/gviz/tq?tqx=out:html&tq=SELECT+N+WHERE+B+CONTAINS+%27" + email_address.value + "%27").done(function(result){
+					$('#reward').html(result).show();
+					document.getElementById('content').style.opacity = '100';
+					document.getElementById('content').style.transition = 'opacity 1000ms';
+			});
+			}
 	</script>
 	<script type="text/javascript">
 		var email_address;
@@ -207,7 +205,7 @@
 				document.getElementById('error').style.transition = 'opacity 1000ms';
 			} else
 			{
-				result_show();
+				airdrop_balance_show();
 				document.getElementById('part').style.display = 'none';
 				document.getElementById('content').style.display = 'block';
 				document.getElementById('content').style.opacity = '0';
