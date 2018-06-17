@@ -17,6 +17,9 @@
 	<link rel="stylesheet" href="https://wr.io/assets/css/wrioos.css">
 	<style>
 	html,body{overflow:inherit!important}
+	table{border:1px solid;border-spacing:10px;border-collapse:separate}
+	tr:nth-child(even){background: #eee}
+	tr:nth-child(odd){background: #fff}
 	#opacity_affiliate,#opacity_airdrop{opacity:0;transition:all 2000ms}
 	#content table{margin:0 auto;position:absolute;top:40px;background-color:#10122d;width:100%}
 	#content table,#content table td{border:none}
@@ -159,7 +162,7 @@
 				document.getElementById('opacity_affiliate').style.opacity = '100';
 				document.getElementById('opacity_affiliate').style.transition = 'all 2000ms';
 
-				$('#eth_reward').append('<table><tr><th>Date</th><th>ETH address</th><th>Amount, WGD</th><th>Status</th><th>TXhash</th><th>5% share</th></tr>');
+				$('#eth_reward').append('<table><tbody><tr><th>Date</th><th>ETH address</th><th>Amount, WGD</th><th>Status</th><th>TXhash</th><th>5% share</th></tr>');
 
 				var url = "https://spreadsheets.google.com/feeds/list/1YqDOMfPw7Xd5rryouF931Y3aSfUboNGkip7qMdvY3BQ/1/public/values?alt=json";
 				$.getJSON(url, function(data) {
@@ -196,7 +199,7 @@
 				 });
 			 });
 
-			 $('#eth_reward').append('<tr><th></th><th></th><th></th><th><th></th>Total</th><th>'+share+'</th></tr></table>');
+			 $('#eth_reward').append('<tr><th></th><th></th><th></th><th><th></th>Total</th><th>'+share+'</th></tr></tbody></table>');
 			}
 
 		function airdrop_balance_show()
