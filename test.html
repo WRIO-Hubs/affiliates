@@ -177,7 +177,6 @@
 							 table += '<td>'+this.gsx$ethaddress.$t+'</td>';
 							 table += '<td>'+this.gsx$wgd.$t+'</td>';
 							 table += '<td>'+this.gsx$kyc.$t+'</td>';
-							 table += '<td></td>';
 							 table += '<td>'+Number(this.gsx$wgd.$t)/100*5+'</td>';
 							 table += '</tr>';
 					}
@@ -190,8 +189,6 @@
 				 $(entry).each(function(){
 					 if (this.gsx$friend.$t == email_address.value){
 					 		 share += parseInt(this.gsx$wgd.$t);
-	 				 		 console.log(parseInt(this.gsx$wgd.$t));
-	 				 		 console.log(table);
 							 table += '<tr>';
 							 table += '<td>+this.gsx$timestamp.$t+</td>';
 							 table += '<td>'+this.gsx$ethaddress.$t+'</td>';
@@ -204,6 +201,7 @@
 			 });
 
 			 $('#eth_reward').append(table+'<tr><td colspan="3"></td><td>Total</td><td>'+share+'</td></tbody></table>');
+			 $('#eth_balance').empty();
 			 $('#eth_balance').prepend(''+share);
 			}
 
