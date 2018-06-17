@@ -202,11 +202,12 @@
 				 });
 				 load_completed = true;
 			 });
-			 table += '<tr><td colspan="3"></td><td>Total</td><td>'+share+'</td></tbody></table>';
-			 $('#eth_reward').append(table);
-			 console.log(table);
-			 $('#eth_balance').empty();
-			 $('#eth_balance').prepend(''+share);
+			 if (load_responses == true && load_completed == true) {
+				 table += '<tr><td colspan="3"></td><td>Total</td><td>'+share+'</td></tbody></table>';
+				 $('#eth_reward').append(table);
+				 $('#eth_balance').empty();
+				 $('#eth_balance').prepend(''+share);
+			 }
 			}
 
 		function airdrop_balance_show()
