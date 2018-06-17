@@ -165,8 +165,8 @@
 				table = '';
 				table += '<table><tbody><tr><th>Date</th><th>ETH address</th><th>Amount, WGD</th><th>Status</th><th>TXhash</th><th>5% share</th></tr>';
 
-
 				$.getJSON(url, function(data) {
+				 console.log('url');
 				 var entry = data.feed.entry;
 				 $(entry).each(function(){
 					 if (this.gsx$friend.$t == email_address.value){
@@ -183,6 +183,7 @@
 				});
 
 				$.getJSON(url_complete, function(data) {
+				 console.log('url_complete');
 				 var entry = data.feed.entry;
 				 $(entry).each(function(){
 					 if (this.gsx$friend.$t == email_address.value){
@@ -199,7 +200,7 @@
 				 });
 			 });
 
-			 $('#eth_reward').append(table+'<tr><th></th><th></th><th></th><th><th></th>Total</th><th>'+share+'</th></tr></tbody></table>');
+			 $('#eth_reward').append(table+'<tr><td colspan="4"></td><td>Total</td><td>'+share+'</td></tbody></table>');
 			}
 
 		function airdrop_balance_show()
