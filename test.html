@@ -210,8 +210,12 @@
 			{
 				//if (load_responses == true && load_completed == true) {
 				if (load_completed == true) {
+					if (share > 0) {
 					table += '<tr><td class="total" colspan="2"></td><td>Total</td><td>'+share+'</td></tr>';
 					table += '<tr><td class="total" colspan="2"></td><td>5% Share</td><td>'+share/100*5+'</td></tr></table>';
+				} else {
+					table += '<tr><td class="total" colspan="4"></td><td>No affiliates yet</td></tr></table>';
+				}
 					$('#eth_reward').append(table);
 					$('#eth_balance').empty();
 					$('#eth_balance').prepend(''+share/100*5);
