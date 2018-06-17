@@ -149,11 +149,10 @@
 	<script src="https://wr.io/assets/js/script.js"></script>
 
 	<script>
-		var table_code;
+		var table;
 		function affiliate_balance_show()
 			{
 			  var share = 0;
-				$('#eth_reward').empty();
 				document.getElementById("affiliate_btn").style.display = "none";
 				document.getElementById("airdrop_btn").style.display = "block";
 				document.getElementById("content").style.display = "none";
@@ -162,7 +161,8 @@
 				document.getElementById('opacity_affiliate').style.opacity = '100';
 				document.getElementById('opacity_affiliate').style.transition = 'all 2000ms';
 
-				table_code = '';
+				$('#eth_reward').empty();
+				table = '';
 				table += '<table><tbody><tr><th>Date</th><th>ETH address</th><th>Amount, WGD</th><th>Status</th><th>TXhash</th><th>5% share</th></tr>');
 
 				var url = "https://spreadsheets.google.com/feeds/list/1YqDOMfPw7Xd5rryouF931Y3aSfUboNGkip7qMdvY3BQ/1/public/values?alt=json";
