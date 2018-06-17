@@ -149,10 +149,17 @@
 				document.getElementById('opacity_affiliate').style.transition = 'all 2000ms';
 
 				document.addEventListener("DOMContentLoaded", function() {
-					var eth_reward;
-					$.getJSON("https://spreadsheets.google.com/feeds/list/1YqDOMfPw7Xd5rryouF931Y3aSfUboNGkip7qMdvY3BQ/2/public/values?alt=json", function(data) {
-						eth_reward = data.feed.entry[0]['gsx$total']['$t'];
-						$('.eth_reward').prepend('<b>'+eth_reward+'</b>');
+						$.getJSON(url, function(data) {
+						 var entry = data.feed.entry;
+						 $(entry).each(function(){
+							 if (this.gsx$friend.$t == email_address.value){
+									 $('.eth_reward').prepend(''+this.gsx$wgd.$t);
+									 $('#eth_reward').prepend('<p class="text-center">TXhash of the transaction is <a href="https://etherscan.io/tx/'+this.gsx$txhash.$t+'" target="_blank">transaction link</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i> on Etherscan.io</p>');
+									 $('#eth_reward').prepend(''+ethaddress);
+							}
+						 });
+					 });
+
 					});
 				});
 			}
@@ -187,7 +194,7 @@
 				document.getElementById('error').style.transition = 'opacity 1000ms';
 			} else {
 				affiliate_balance_show();
-				document.getElementById("affiliate_url").innerHTML = '<a href="https://wr.io/supporter_round/?friend='+email_address.value+'" _blank="target">https://wr.io/supporter_round?friend='+email_address.value+'</a></b>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i>';
+				document.getElementById("affiliate_url").innerHTML = '<a href="https://wr.io/supporter_round/?friend='+email_address.value+'" target="_blank">https://wr.io/supporter_round?friend='+email_address.value+'</a></b>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i>';
 				document.getElementById('part').style.display = 'none';
 			}
 		}
