@@ -183,6 +183,7 @@
 					}
 				 });
 				 load_responses = true;
+				 console.log(load_responses);
 				});
 
 				url_complete = "https://spreadsheets.google.com/feeds/list/1YqDOMfPw7Xd5rryouF931Y3aSfUboNGkip7qMdvY3BQ/2/public/values?alt=json";
@@ -201,12 +202,15 @@
 					}
 				 });
 				 load_completed = true;
+				 console.log(load_completed);
 			 });
 			 if (load_responses == true && load_completed == true) {
 				 table += '<tr><td colspan="3"></td><td>Total</td><td>'+share+'</td></tbody></table>';
 				 $('#eth_reward').append(table);
 				 $('#eth_balance').empty();
 				 $('#eth_balance').prepend(''+share);
+
+				 console.log('!!!');
 			 }
 			}
 
