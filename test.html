@@ -152,16 +152,16 @@
 						$.getJSON(url, function(data) {
 						 var entry = data.feed.entry;
 						 $(entry).each(function(){
-							 if (this.gsx$friend.$t == email_address.value){
+							 if (this.gsx$friend.$t == email_address){
 									 $('.eth_reward').prepend(''+this.gsx$wgd.$t);
-									 $('#eth_reward').prepend('<p class="text-center">TXhash of the transaction is <a href="https://etherscan.io/tx/'+this.gsx$txhash.$t+'" target="_blank">transaction link</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i> on Etherscan.io</p>');
-									 $('#eth_reward').prepend(''+ethaddress);
+									 $('.eth_reward').prepend('<p class="text-center">TXhash of the transaction is <a href="https://etherscan.io/tx/'+this.gsx$txhash.$t+'" target="_blank">transaction link</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i> on Etherscan.io</p>');
+									 $('.eth_reward').prepend(''+ethaddress);
 							}
 						 });
 					 });
 
 					});
-			};
+			}
 
 		function airdrop_balance_show()
 			{
@@ -173,7 +173,7 @@
 				document.getElementById('opacity_airdrop').style.opacity = '100';
 				document.getElementById('opacity_airdrop').style.transition = 'all 2000ms';
 
-				$.ajax("https://docs.google.com/spreadsheets/d/10yfHohsWi8DZSuyorxPbh-k3A4MzKsZIzssyGHFE46w/gviz/tq?tqx=out:html&tq=SELECT+N+WHERE+B+CONTAINS+%27" + email_address.value + "%27").done(function(result){
+				$.ajax("https://docs.google.com/spreadsheets/d/10yfHohsWi8DZSuyorxPbh-k3A4MzKsZIzssyGHFE46w/gviz/tq?tqx=out:html&tq=SELECT+N+WHERE+B+CONTAINS+%27" + email_address + "%27").done(function(result){
 				$('#reward').html(result).show();
 			});
 			}
@@ -181,7 +181,7 @@
 	<script type="text/javascript">
 		var email_address;
 		function onload() {
-				email_address = document.getElementById('email_address');
+				email_address = document.getElementById('email_address').value;
 		}
 
 		function check()
@@ -193,7 +193,7 @@
 				document.getElementById('error').style.transition = 'opacity 1000ms';
 			} else {
 				affiliate_balance_show();
-				document.getElementById("affiliate_url").innerHTML = '<a href="https://wr.io/supporter_round/?friend='+email_address.value+'" target="_blank">https://wr.io/supporter_round?friend='+email_address.value+'</a></b>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i>';
+				document.getElementById("affiliate_url").innerHTML = '<a href="https://wr.io/supporter_round/?friend='+email_address+'" target="_blank">https://wr.io/supporter_round?friend='+email_address+'</a></b>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i>';
 				document.getElementById('part').style.display = 'none';
 			}
 		}
