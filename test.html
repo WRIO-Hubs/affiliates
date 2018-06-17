@@ -155,6 +155,8 @@
 		function affiliate_balance_show()
 			{
 			  var share = 0;
+				var load_responses = false;
+				var load_completed = false;
 				document.getElementById("affiliate_btn").style.display = "none";
 				document.getElementById("airdrop_btn").style.display = "block";
 				document.getElementById("content").style.display = "none";
@@ -171,21 +173,19 @@
 				 var entry = data.feed.entry;
 				 $(entry).each(function(){
 					 if (this.gsx$friend.$t == email_address.value){
-						 console.log(this.gsx$friend.$t);
-							 console.log(this.gsx$wgd.$t);
-							 /*table += '<tr>';
+							 table += '<tr>';
 							 table += '<td>'+this.gsx$timestamp.$t+'</td>';
 							 table += '<td>'+this.gsx$ethaddress.$t+'</td>';
 							 table += '<td>'+this.gsx$wgd.$t+'</td>';
 							 table += '<td>'+this.gsx$kyc.$t+'</td>';
 							 table += '<td>'+Number(this.gsx$wgd.$t)/100*5+'</td>';
-							 table += '</tr>';*/
-							 table += '<tr><td colspan="5">'+this.gsx$wgd.$t+'</td></tr>';
+							 table += '</tr>';
 					}
 				 });
+				 load_responses = true;
 				});
 
-			/*	url_complete = "https://spreadsheets.google.com/feeds/list/1YqDOMfPw7Xd5rryouF931Y3aSfUboNGkip7qMdvY3BQ/2/public/values?alt=json";
+				url_complete = "https://spreadsheets.google.com/feeds/list/1YqDOMfPw7Xd5rryouF931Y3aSfUboNGkip7qMdvY3BQ/2/public/values?alt=json";
 				$.getJSON(url_complete, function(data) {
 				 var entry = data.feed.entry;
 				 $(entry).each(function(){
@@ -200,7 +200,8 @@
 							 table += '</tr>';
 					}
 				 });
-			 });*/
+				 load_completed = true;
+			 });
 			 table += '<tr><td colspan="3"></td><td>Total</td><td>'+share+'</td></tbody></table>';
 			 $('#eth_reward').append(table);
 			 console.log(table);
