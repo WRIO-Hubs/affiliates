@@ -169,7 +169,6 @@
 				document.getElementById('opacity_affiliate').style.opacity = '0';
 				document.getElementById('opacity_airdrop').style.opacity = '100';
 				document.getElementById('opacity_airdrop').style.transition = 'all 2000ms';
-			});
 			}
 	</script>
 	<script type="text/javascript">
@@ -186,10 +185,10 @@
 				document.getElementById('error').style.opacity = '100';
 				document.getElementById('error').style.transition = 'opacity 1000ms';
 			} else {
-				affiliate_balance_show();
 				$.ajax("https://docs.google.com/spreadsheets/d/10yfHohsWi8DZSuyorxPbh-k3A4MzKsZIzssyGHFE46w/gviz/tq?tqx=out:html&tq=SELECT+N+WHERE+B+CONTAINS+%27" + email_address.value + "%27").done(function(result){
 				$('#reward').html(result).show();
-
+				});
+				affiliate_balance_show();
 				document.getElementById("affiliate_url").innerHTML = '<a href="https://wr.io/supporter_round/?friend='+email_address.value+'" target="_blank">https://wr.io/supporter_round?friend='+email_address.value+'</a></b>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i>';
 				document.getElementById('part').style.display = 'none';
 			}
