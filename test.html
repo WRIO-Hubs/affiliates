@@ -163,7 +163,7 @@
 
 				$('#eth_reward').empty();
 				table = '';
-				table += '<table><tbody><tr><th>Date</th><th>ETH address</th><th>Amount, WGD</th><th>Status</th><th>TXhash</th><th>5% share</th></tr>';
+				table += '<table class="table"><tbody><tr><th>Date</th><th>ETH address</th><th>Amount, WGD</th><th>Status</th><th>TXhash</th><th>5% share</th></tr>';
 
 				$.getJSON(url, function(data) {
 				 var entry = data.feed.entry;
