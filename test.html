@@ -171,7 +171,6 @@
 				 var entry = data.feed.entry;
 				 $(entry).each(function(){
 					 if (this.gsx$friend.$t == email_address.value){
-	 				 		console.log(table);
 							 /*table += '<tr>';
 							 table += '<td>'+this.gsx$timestamp.$t+'</td>';
 							 table += '<td>'+this.gsx$ethaddress.$t+'</td>';
@@ -202,6 +201,7 @@
 			 });*/
 
 			 $('#eth_reward').append(table+'<tr><td colspan="3"></td><td>Total</td><td>'+share+'</td></tbody></table>');
+			 console.log(table);
 			 $('#eth_balance').empty();
 			 $('#eth_balance').prepend(''+share);
 			}
