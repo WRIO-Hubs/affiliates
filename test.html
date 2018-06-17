@@ -152,11 +152,11 @@
 
 	<script>
 		var table;
+		var load_responses = false;
+		var load_completed = false;
 		function affiliate_balance_show()
 			{
 			  var share = 0;
-				var load_responses = false;
-				var load_completed = false;
 				document.getElementById("affiliate_btn").style.display = "none";
 				document.getElementById("airdrop_btn").style.display = "block";
 				document.getElementById("content").style.display = "none";
@@ -183,7 +183,7 @@
 					}
 				 });
 				 load_responses = true;
-				 console.log(load_responses);
+				 ready();
 				});
 
 				url_complete = "https://spreadsheets.google.com/feeds/list/1YqDOMfPw7Xd5rryouF931Y3aSfUboNGkip7qMdvY3BQ/2/public/values?alt=json";
@@ -202,17 +202,21 @@
 					}
 				 });
 				 load_completed = true;
-				 console.log(load_completed);
+				 ready();
 			 });
-			 if (load_responses == true && load_completed == true) {
-				 table += '<tr><td colspan="3"></td><td>Total</td><td>'+share+'</td></tbody></table>';
-				 $('#eth_reward').append(table);
-				 $('#eth_balance').empty();
-				 $('#eth_balance').prepend(''+share);
-
-				 console.log('!!!');
-			 }
 			}
+
+		function ready()
+			{
+				if (load_responses == true && load_completed == true) {
+					table += '<tr><td colspan="3"></td><td>Total</td><td>'+share+'</td></tbody></table>';
+					$('#eth_reward').append(table);
+					$('#eth_balance').empty();
+					$('#eth_balance').prepend(''+share);
+
+					console.log('!!!');
+				}
+		}
 
 		function airdrop_balance_show()
 			{
