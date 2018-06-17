@@ -27,7 +27,7 @@
 	#content table tr:first-child{display:none}
 	#content table tr{background-color:transparent!important}
 	#content table td{font-size:32px}
-	#content #reward td{font-size:140px;color:#7a0fff;text-align:center}
+	#content #reward td,#affiliate_content h1{font-size:140px;color:#7a0fff;text-align:center}
 	#content #empty{color:#7a0fff;position:absolute;top:60px;display:block;margin:0 auto;width:100%}
 	#affiliate_content,#content{display:none}
 	#error{opacity:0;transition:opacity 1000ms;position:relative;top:-12px}
@@ -68,15 +68,14 @@
 						<div class="col-sm-12 text no-pd" id="affiliate_content">
 							<div id="opacity_affiliate">
 								<h3 class="name">Your Affiliate reward is</h3>
-								<div id="eth_balance"></div>
+								<h1 id="eth_balance"></h1>
 								<br><br><br>
 								<p>Продвигайте свою реферальную ссылку в соцсетях и любым другим удобным вам способом, чтобы получить 5% от всех транзакций по вашей ссылке вскоре после завершения Supporter Round. Вы получите на вашу почту сообщение.</p>
 								<h5>Your referral link is</h5>
 								<p><b id="affiliate_url"></b></p>
-								<br><br><br>
+								<br><br>
 								<div class="col-sm-12 text-center sharing">
 									<h5>Share on</h5>
-									<br>
 									<a href="https://www.facebook.com/sharer/sharer.php?u=wr.io/supporter_round" target="_blank" alt="Post Supporter Round"><em class="fa fa-facebook"></em></a>
 									<a href="javascript:tweetCurrentPage()" target="_blank" alt="Tweet Supporter Round"><em class="fa fa-twitter"></em></a>
 									<a href="tg://msg?text=wr.io/supporter_round" target="_blank" alt="Share Supporter Round"><em class="fa fa-telegram"></em></a>
@@ -85,8 +84,7 @@
 								<div id="eth_reward"></div>
 								<br><br><br>
 								<div class="col-sm-12 text no-pd">
-									<p class="text-center">Reward will be distributed вскоре после завершения Special Round.
-										<br><br>Have questions? Contact us on webRunes <a href="https://t.me/webRunesGroup" target="_blank">Telegram group</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i></p>
+									<p class="text-center">Have questions? Contact us on webRunes <a href="https://t.me/webRunesGroup" target="_blank">Telegram group</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i></p>
 									<br>
 								</div>
 							</div>
@@ -173,9 +171,8 @@
 				 var entry = data.feed.entry;
 				 $(entry).each(function(){
 					 if (this.gsx$friend.$t == email_address.value){
-	 				 		console.log(email_address.value);
+	 				 		console.log(this.gsx$ethaddress.$t);
 							 table += '<tr>';
-							 table += 'zzzz';
 							 table += '<td>'+this.gsx$timestamp.$t+'</td>';
 							 table += '<td>'+this.gsx$ethaddress.$t+'</td>';
 							 table += '<td>'+this.gsx$wgd.$t+'</td>';
@@ -196,8 +193,7 @@
 	 				 		 console.log(parseInt(this.gsx$wgd.$t));
 	 				 		 console.log(share);
 							 table += '<tr>';
-							 table += '!!!!!!';
-							 table += '<td>'+this.gsx$timestamp.$t+'</td>';
+							 table += '<td>+this.gsx$timestamp.$t+</td>';
 							 table += '<td>'+this.gsx$ethaddress.$t+'</td>';
 							 table += '<td>'+this.gsx$wgd.$t+'</td>';
 							 table += '<td>TXhash'+'<p class="text-center"><a href="https://etherscan.io/tx/'+this.gsx$txhash.$t+'" target="_blank">transaction link</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i> on Etherscan.io</p>'+'</td>';
