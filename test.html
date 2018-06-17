@@ -65,7 +65,7 @@
 								<p>Ваша реферальная ссылка:<br><b id="affiliate_url"></b></p>
 								<p>Продвигайте ее в соцсетях и получайте 5% сразу после завершения. Вы получите на вашу почту сообщение.</p>
 								<h3>Your coming ETH reward is</h3>
-								<div class="eth_reward"></div>
+								<div id="eth_reward"></div>
 								<br>
 								<br>
 								<div class="col-sm-12 text no-pd">
@@ -149,13 +149,13 @@
 				document.getElementById('opacity_affiliate').style.transition = 'all 2000ms';
 
 				document.addEventListener("DOMContentLoaded", function() {
+					var url = "https://spreadsheets.google.com/feeds/list/1YqDOMfPw7Xd5rryouF931Y3aSfUboNGkip7qMdvY3BQ/2/public/values?alt=json";
 						$.getJSON(url, function(data) {
 						 var entry = data.feed.entry;
 						 $(entry).each(function(){
 							 if (this.gsx$friend.$t == email_address){
-									 $('.eth_reward').prepend(''+this.gsx$wgd.$t);
-									 $('.eth_reward').prepend('<p class="text-center">TXhash of the transaction is <a href="https://etherscan.io/tx/'+this.gsx$txhash.$t+'" target="_blank">transaction link</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i> on Etherscan.io</p>');
-									 $('.eth_reward').prepend(''+ethaddress);
+									 $('#eth_reward').prepend(''+this.gsx$wgd.$t);
+									 $('#eth_reward').prepend('<p class="text-center">TXhash of the transaction is <a href="https://etherscan.io/tx/'+this.gsx$txhash.$t+'" target="_blank">transaction link</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i> on Etherscan.io</p>');
 							}
 						 });
 					 });
