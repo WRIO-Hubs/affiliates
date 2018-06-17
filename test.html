@@ -70,10 +70,10 @@
 							<div id="opacity_affiliate">
 								<h3 class="name">Your Affiliate ETH balance is</h3>
 								<h1 id="eth_balance"></h1>
-								<br>
-								<p>Продвигайте свою реферальную ссылку в соцсетях и любым другим удобным вам способом, чтобы получить 5% от всех транзакций по вашей ссылке вскоре после завершения Supporter Round. Вы получите на вашу почту сообщение.</p>
 								<h5>Your referral link is</h5>
 								<p><b id="affiliate_url"></b></p>
+								<br>
+								<p>Продвигайте свою реферальную ссылку в соцсетях и любым другим удобным вам способом, чтобы получить 5% от всех транзакций по вашей ссылке вскоре после завершения Supporter Round. Вы получите на вашу почту сообщение.</p>
 								<br><br>
 								<div class="col-sm-12 text-center sharing">
 									<h5>Share on</h5>
@@ -215,7 +215,7 @@
 					table += '<tr class="total"><td colspan="3" style="text-align:right">Total</td><td>'+share+'</td></tr>';
 					table += '<tr class="total"><td colspan="3" style="text-align:right">Your 5% Share</td><td>'+share/100*5+'</td></tr></table>';
 				} else {
-					table += '<tr class="total"><td colspan="4"></td><td>No affiliates yet</td></tr></table>';
+					table += '<tr class="total" style="text-align:left"><td colspan="3"></td><td>No affiliates yet</td></tr></table>';
 				}
 					$('#eth_reward').append(table);
 					$('#eth_balance').empty();
