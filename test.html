@@ -166,8 +166,7 @@
 				document.getElementById('opacity_affiliate').style.transition = 'all 2000ms';
 
 				$('#eth_reward').empty();
-				table = '';
-				table += '<table class="table"><tbody><tr><th>Date</th><th>ETH address</th><th>Amount, WGD</th><th>Status</th><th>5% share</th></tr>';
+				table = '<table class="table"><tbody><tr><th>Date</th><th>ETH address</th><th>Amount, WGD</th><th>Status</th><th>5% share</th></tr>';
 
 				url = "https://spreadsheets.google.com/feeds/list/1YqDOMfPw7Xd5rryouF931Y3aSfUboNGkip7qMdvY3BQ/1/public/values?alt=json";
 				$.getJSON(url, function(data) {
@@ -192,12 +191,13 @@
 				 var entry = data.feed.entry;
 				 $(entry).each(function(){
 					 if (this.gsx$friend.$t == email_address.value){
-	 				 		 console.log(this.gsx$friend.$t);
+					 		 share += Number(this.gsx$wgd.$t);
+	 				 		 console.log(Number(this.gsx$wgd.$t));
+	 				 		 console.log(share);
 							 table += '<tr>';
 							 table += '<td>'+this.gsx$timestamp.$t+'</td>';
 							 table += '<td>'+this.gsx$ethaddress.$t+'</td>';
 							 table += '<td>'+this.gsx$wgd.$t+'</td>';
-							 share = share + Number(this.gsx$wgd.$t);
 							 table += '<td>TXhash'+'<p class="text-center"><a href="https://etherscan.io/tx/'+this.gsx$txhash.$t+'" target="_blank">transaction link</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i> on Etherscan.io</p>'+'</td>';
 							 table += '<td>'+this.gsx$wgd.$t/100*5+'</td>';
 							 table += '</tr>';
