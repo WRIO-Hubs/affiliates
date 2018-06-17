@@ -17,7 +17,8 @@
 	<link rel="stylesheet" href="https://wr.io/assets/css/wrioos.css">
 	<style>
 	html,body{overflow:inherit!important}
-	table{border:1px solid;border-spacing:10px;border-collapse:separate;width:100%}
+	table{border-collapse:separate;width:100%}
+	.table td,.table th{border-top:none}
 	tr:nth-child(even){background:transparent}
 	tr:nth-child(odd){background:#0c0d22}
 	#opacity_affiliate,#opacity_airdrop{opacity:0;transition:all 2000ms}
@@ -165,6 +166,7 @@
 				table = '';
 				table += '<table class="table"><tbody><tr><th>Date</th><th>ETH address</th><th>Amount, WGD</th><th>Status</th><th>TXhash</th><th>5% share</th></tr>';
 
+				url = "https://spreadsheets.google.com/feeds/list/1YqDOMfPw7Xd5rryouF931Y3aSfUboNGkip7qMdvY3BQ/1/public/values?alt=json";
 				$.getJSON(url, function(data) {
 				 var entry = data.feed.entry;
 				 $(entry).each(function(){
@@ -181,7 +183,8 @@
 					}
 				 });
 				});
-
+				
+				url_complete = "https://spreadsheets.google.com/feeds/list/1YqDOMfPw7Xd5rryouF931Y3aSfUboNGkip7qMdvY3BQ/2/public/values?alt=json";
 				$.getJSON(url_complete, function(data) {
 				 var entry = data.feed.entry;
 				 $(entry).each(function(){
@@ -238,8 +241,6 @@
 				$.ajax("https://docs.google.com/spreadsheets/d/10yfHohsWi8DZSuyorxPbh-k3A4MzKsZIzssyGHFE46w/gviz/tq?tqx=out:html&tq=SELECT+N+WHERE+B+CONTAINS+%27" + email_address.value + "%27").done(function(result){
 				$('#reward').html(result).show();
 				});
-				url = "https://spreadsheets.google.com/feeds/list/1YqDOMfPw7Xd5rryouF931Y3aSfUboNGkip7qMdvY3BQ/1/public/values?alt=json";
-				url_complete = "https://spreadsheets.google.com/feeds/list/1YqDOMfPw7Xd5rryouF931Y3aSfUboNGkip7qMdvY3BQ/2/public/values?alt=json";
 				affiliate_balance_show();
 				document.getElementById("affiliate_url").innerHTML = '<a href="https://wr.io/supporter_round/?friend='+email_address.value+'" target="_blank">https://wr.io/supporter_round?friend='+email_address.value+'</a></b>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i>';
 				document.getElementById('part').style.display = 'none';
