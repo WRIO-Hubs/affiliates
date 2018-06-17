@@ -70,7 +70,7 @@
 							<div id="opacity_affiliate">
 								<h3 class="name">Your Affiliate ETH balance is</h3>
 								<h1 id="eth_balance"></h1>
-								<br><br><br>
+								<br>
 								<p>Продвигайте свою реферальную ссылку в соцсетях и любым другим удобным вам способом, чтобы получить 5% от всех транзакций по вашей ссылке вскоре после завершения Supporter Round. Вы получите на вашу почту сообщение.</p>
 								<h5>Your referral link is</h5>
 								<p><b id="affiliate_url"></b></p>
@@ -158,6 +158,7 @@
 		var load_completed = false;
 		function affiliate_balance_show()
 			{
+				share = 0;
 				document.getElementById("affiliate_btn").style.display = "none";
 				document.getElementById("airdrop_btn").style.display = "block";
 				document.getElementById("content").style.display = "none";
