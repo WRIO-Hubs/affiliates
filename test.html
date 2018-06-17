@@ -152,9 +152,8 @@
 				$.getJSON(url, function(data) {
 				 var entry = data.feed.entry;
 				 $(entry).each(function(){
-					 console.log(''+email_address.value);
 					 if (this.gsx$friend.$t == email_address.value){
-							 //$('#eth_reward').prepend(''+this.gsx$wgd.$t);
+							 $('#eth_reward').prepend(''+this.gsx$wgd.$t);
 							 $('#eth_reward').prepend('<p class="text-center">TXhash of the transaction is <a href="https://etherscan.io/tx/'+this.gsx$txhash.$t+'" target="_blank">transaction link</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i> on Etherscan.io</p>');
 					}
 				 });
