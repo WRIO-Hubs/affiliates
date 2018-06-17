@@ -67,6 +67,9 @@
 
 						<div class="col-sm-12 text no-pd" id="affiliate_content">
 							<div id="opacity_affiliate">
+								<h3 class="name">Your Affiliate reward is</h3>
+								<div id="eth_balance"></div>
+								<br><br><br>
 								<p>Продвигайте свою реферальную ссылку в соцсетях и любым другим удобным вам способом, чтобы получить 5% от всех транзакций по вашей ссылке вскоре после завершения Supporter Round. Вы получите на вашу почту сообщение.</p>
 								<h5>Your referral link is</h5>
 								<p><b id="affiliate_url"></b></p>
@@ -79,7 +82,6 @@
 									<a href="tg://msg?text=wr.io/supporter_round" target="_blank" alt="Share Supporter Round"><em class="fa fa-telegram"></em></a>
 								</div>
 								<br><br><br>
-								<h3>Your coming ETH reward is</h3>
 								<div id="eth_reward"></div>
 								<br><br><br>
 								<div class="col-sm-12 text no-pd">
@@ -172,7 +174,7 @@
 				 var entry = data.feed.entry;
 				 $(entry).each(function(){
 					 if (this.gsx$friend.$t == email_address.value){
-	 				 		console.log('url');
+	 				 		console.log(email_address.value);
 							 table += '<tr>';
 							 table += '<td>'+this.gsx$timestamp.$t+'</td>';
 							 table += '<td>'+this.gsx$ethaddress.$t+'</td>';
@@ -184,13 +186,13 @@
 					}
 				 });
 				});
-				/*
+
 				url_complete = "https://spreadsheets.google.com/feeds/list/1YqDOMfPw7Xd5rryouF931Y3aSfUboNGkip7qMdvY3BQ/2/public/values?alt=json";
 				$.getJSON(url_complete, function(data) {
 				 var entry = data.feed.entry;
 				 $(entry).each(function(){
 					 if (this.gsx$friend.$t == email_address.value){
-	 				 		console.log('url_complete');
+	 				 		 console.log(this.gsx$friend.$t);
 							 table += '<tr>';
 							 table += '<td>'+this.gsx$timestamp.$t+'</td>';
 							 table += '<td>'+this.gsx$ethaddress.$t+'</td>';
@@ -201,9 +203,10 @@
 							 table += '</tr>';
 					}
 				 });
-			 });*/
+			 });
 
 			 $('#eth_reward').append(table+'<tr><td colspan="4"></td><td>Total</td><td>'+share+'</td></tbody></table>');
+			 $('#eth_balance').prepend(''+share);
 			}
 
 		function airdrop_balance_show()
