@@ -67,20 +67,21 @@
 
 						<div class="col-sm-12 text no-pd" id="affiliate_content">
 							<div id="opacity_affiliate">
-								<p>Ваша реферальная ссылка:<br><b id="affiliate_url"></b></p>
-								<p>Продвигайте ее в соцсетях и получайте 5% сразу после завершения. Вы получите на вашу почту сообщение.</p>
+								<p>Продвигайте свою реферальную ссылку в соцсетях и любым другим удобным вам способом, чтобы получить 5% от всех транзакций по вашей ссылке вскоре после завершения Supporter Round. Вы получите на вашу почту сообщение.</p>
+								<h5>Your referral link is</h5>
+								<p><b id="affiliate_url"></b></p>
+								<br><br><br>
 								<div class="col-sm-12 text-center sharing">
-									Share on
+									<h5>Share on</h5>
+									<br>
 									<a href="https://www.facebook.com/sharer/sharer.php?u=wr.io/supporter_round" target="_blank" alt="Post Supporter Round"><em class="fa fa-facebook"></em></a>
 									<a href="javascript:tweetCurrentPage()" target="_blank" alt="Tweet Supporter Round"><em class="fa fa-twitter"></em></a>
 									<a href="tg://msg?text=wr.io/supporter_round" target="_blank" alt="Share Supporter Round"><em class="fa fa-telegram"></em></a>
 								</div>
-								<br>
-								<br>
+								<br><br><br>
 								<h3>Your coming ETH reward is</h3>
 								<div id="eth_reward"></div>
-								<br>
-								<br>
+								<br><br><br>
 								<div class="col-sm-12 text no-pd">
 									<p class="text-center">Reward will be distributed вскоре после завершения Special Round.
 										<br><br>Have questions? Contact us on webRunes <a href="https://t.me/webRunesGroup" target="_blank">Telegram group</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i></p>
@@ -164,7 +165,7 @@
 
 				$('#eth_reward').empty();
 				table = '';
-				table += '<table class="table"><tbody><tr><th>Date</th><th>ETH address</th><th>Amount, WGD</th><th>Status</th><th>TXhash</th><th>5% share</th></tr>';
+				table += '<table class="table"><tbody><tr><th>Date</th><th>ETH address</th><th>Amount, WGD</th><th>Status</th><th>5% share</th></tr>';
 
 				url = "https://spreadsheets.google.com/feeds/list/1YqDOMfPw7Xd5rryouF931Y3aSfUboNGkip7qMdvY3BQ/1/public/values?alt=json";
 				$.getJSON(url, function(data) {
@@ -195,8 +196,7 @@
 							 table += '<td>'+this.gsx$ethaddress.$t+'</td>';
 							 table += '<td>'+this.gsx$wgd.$t+'</td>';
 							 share = share + Number(this.gsx$wgd.$t);
-							 table += '<td>Completed</td>';
-							 table += '<td>'+'<p class="text-center"><a href="https://etherscan.io/tx/'+this.gsx$txhash.$t+'" target="_blank">transaction link</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i> on Etherscan.io</p>'+'</td>';
+							 table += '<td>TXhash'+'<p class="text-center"><a href="https://etherscan.io/tx/'+this.gsx$txhash.$t+'" target="_blank">transaction link</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i> on Etherscan.io</p>'+'</td>';
 							 table += '<td>'+this.gsx$wgd.$t/100*5+'</td>';
 							 table += '</tr>';
 					}
