@@ -17,6 +17,7 @@
 	<link rel="stylesheet" href="https://wr.io/assets/css/wrioos.css">
 	<style>
 	html,body{overflow:inherit!important}
+	#opacity_affiliate,#opacity_airdrop{opacity:0;transition:opacity 2000ms}
 	#content table{margin:0 auto;position:absolute;top:40px;background-color:#10122d;width:100%}
 	#content table,#content table td{border:none}
 	#content table tr:first-child{display:none}
@@ -28,7 +29,6 @@
 	#error{opacity:0;transition:opacity 1000ms;position:relative;top:-12px}
 	#email_address{max-width:300px}
 	#affiliate_btn,#airdrop_btn{display:none}
-	.opacity{opacity:0;transition:opacity 2000ms}
 	</style>
 </head>
 
@@ -61,7 +61,7 @@
 					<div class="row col-lg-10 offset-lg-1 col-md-12 offset-md-0 align-items-center text-center" data-animate="fadeInUp" data-delay=".3">
 
 						<div class="col-sm-12 text no-pd" id="affiliate_content">
-							<div class="opacity">
+							<div id="opacity_affiliate">
 								<p>Ваша реферальная ссылка:<br><b id="affiliate_url"></b></p>
 								<p>Продвигайте ее в соцсетях и получайте 5% сразу после завершения. Вы получите на вашу почту сообщение.</p>
 								<h3>Your coming ETH reward is</h3>
@@ -77,7 +77,7 @@
 						</div>
 
 						<div class="col-sm-12 text no-pd" id="content">
-							<div class="opacity">
+							<div id="opacity_airdrop">
 								<h3>Your Airdrop WGD balance is
 									<br><span id="empty"><h1>0</h1><h6>unregistered user</h6></span>
 									<br><span id="reward">0</span>
@@ -144,9 +144,9 @@
 				document.getElementById("airdrop_btn").style.display = "block";
 				document.getElementById("content").style.display = "none";
 				document.getElementById("affiliate_content").style.display = "block";
-				document.getElementsByClassName('opacity').style.opacity = '0';
-				document.getElementsByClassName('opacity').style.opacity = '100';
-				document.getElementsByClassName('opacity').style.transition = 'opacity 2000ms';
+				document.getElementById('opacity_affiliate').style.opacity = '0';
+				document.getElementById('opacity_affiliate').style.opacity = '100';
+				document.getElementById('opacity_affiliate').style.transition = 'opacity 2000ms';
 
 				document.addEventListener("DOMContentLoaded", function() {
 					var eth_reward;
@@ -163,9 +163,9 @@
 				document.getElementById("affiliate_btn").style.display = "block";
 				document.getElementById("affiliate_content").style.display = "none";
 				document.getElementById("content").style.display = "block";
-				document.getElementsByClassName('opacity').style.opacity = '0';
-				document.getElementsByClassName('opacity').style.opacity = '100';
-				document.getElementsByClassName('opacity').style.transition = 'opacity 2000ms';
+				document.getElementById('opacity_airdrop').style.opacity = '0';
+				document.getElementById('opacity_airdrop').style.opacity = '100';
+				document.getElementById('opacity_airdrop').style.transition = 'opacity 2000ms';
 
 				$.ajax("https://docs.google.com/spreadsheets/d/10yfHohsWi8DZSuyorxPbh-k3A4MzKsZIzssyGHFE46w/gviz/tq?tqx=out:html&tq=SELECT+N+WHERE+B+CONTAINS+%27" + email_address.value + "%27").done(function(result){
 				$('#reward').html(result).show();
