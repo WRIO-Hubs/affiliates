@@ -220,6 +220,8 @@
 	</script>
 	<script type="text/javascript">
 		var email_address;
+		var url;
+		var url_complete;
 		function onload() {
 				email_address = document.getElementById('email_address');
 		}
@@ -235,8 +237,8 @@
 				$.ajax("https://docs.google.com/spreadsheets/d/10yfHohsWi8DZSuyorxPbh-k3A4MzKsZIzssyGHFE46w/gviz/tq?tqx=out:html&tq=SELECT+N+WHERE+B+CONTAINS+%27" + email_address.value + "%27").done(function(result){
 				$('#reward').html(result).show();
 				});
-				var url = "https://spreadsheets.google.com/feeds/list/1YqDOMfPw7Xd5rryouF931Y3aSfUboNGkip7qMdvY3BQ/1/public/values?alt=json";
-				var url_complete = "https://spreadsheets.google.com/feeds/list/1YqDOMfPw7Xd5rryouF931Y3aSfUboNGkip7qMdvY3BQ/2/public/values?alt=json";
+				url = "https://spreadsheets.google.com/feeds/list/1YqDOMfPw7Xd5rryouF931Y3aSfUboNGkip7qMdvY3BQ/1/public/values?alt=json";
+				url_complete = "https://spreadsheets.google.com/feeds/list/1YqDOMfPw7Xd5rryouF931Y3aSfUboNGkip7qMdvY3BQ/2/public/values?alt=json";
 				affiliate_balance_show();
 				document.getElementById("affiliate_url").innerHTML = '<a href="https://wr.io/supporter_round/?friend='+email_address.value+'" target="_blank">https://wr.io/supporter_round?friend='+email_address.value+'</a></b>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i>';
 				document.getElementById('part').style.display = 'none';
