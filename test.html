@@ -77,9 +77,14 @@
 								<br>
 								<div class="col-sm-12 text-center sharing">
 									<h4>Share on</h3>
-									<a href="http://www.facebook.com/sharer.php?s=100&p[title]=Became a Web 3.0 Atlas!&p[summary]=YOUR_SUMMARY&p[url]=https://wr.io/supporter_round?friend=test@gmail.com&p[images][0]=https://webrunes.com/img/cards/airdrop_thread.jpg" target="_blank" alt="Post Supporter Round"><em class="fa fa-facebook"></em></a>
+									<!--<a href="http://www.facebook.com/sharer.php?s=100&p[title]=Became a Web 3.0 Atlas!&p[summary]=YOUR_SUMMARY&p[url]=https://wr.io/supporter_round?friend=test@gmail.com&p[images][0]=https://webrunes.com/img/cards/airdrop_thread.jpg" target="_blank" alt="Share Supporter Round"><em class="fa fa-facebook"></em></a>
 									<a href="https://twitter.com/share?url=https://wr.io/supporter_round?friend=test@gmail.com&text=[text]" target="_blank" alt="Tweet Supporter Round"><em class="fa fa-twitter"></em></a>
-									<a href="https://t.me/share/url?url=https://wr.io/supporter_round?friend=test@gmail.com&text=[text]" target="_blank" alt="Share Supporter Round"><em class="fa fa-telegram"></em></a>
+									<a href="https://t.me/share/url?url=https://wr.io/supporter_round?friend=test@gmail.com&text=[text]" target="_blank" alt="Share Supporter Round"><em class="fa fa-telegram"></em></a>-->
+
+									<a href="https://www.facebook.com/sharer/sharer.php?u=URLENCODED&t=TITLE" class="share facebook" data-network="facebook">Share on Facebook</a>
+									<a href="https://twitter.com/share?url=URLENCODED&text=TITLE" class="share twitter" data-network="twitter">Share on Twitter</a>
+									<a href="https://plus.google.com/share?url=URLENCODED" class="share google" data-network="google">Share on Google+</a>
+									<a href="https://www.linkedin.com/shareArticle?mini=true&url=URLENCODED&title=TITLE&source=COMPANY" class="share linkedin" data-network="linkedin">Share on LinkedIn</a>
 								</div>
 								<br><br><br>
 								<h4>Your affiliates</h3>
@@ -191,6 +196,27 @@
 				 load_responses = true;
 				 ready();
 			 });*/
+
+			 $('a.share').click(function(e){
+e.preventDefault();
+var $link   = $(this);
+var href    = $link.attr('href');
+var network = $link.attr('data-network');
+
+var networks = {
+    facebook : { width : 600, height : 300 },
+    twitter  : { width : 600, height : 254 },
+    google   : { width : 515, height : 490 },
+    linkedin : { width : 600, height : 473 }
+};
+
+var popup = function(network){
+    var options = 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,';
+    window.open(href, '', options+'height='+networks[network].height+',width='+networks[network].width);
+}
+
+popup(network);
+});
 
 				url_complete = "https://spreadsheets.google.com/feeds/list/1YqDOMfPw7Xd5rryouF931Y3aSfUboNGkip7qMdvY3BQ/2/public/values?alt=json";
 				$.getJSON(url_complete, function(data) {
