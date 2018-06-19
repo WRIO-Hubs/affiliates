@@ -73,7 +73,7 @@
 								<h1 id="eth_balance"></h1>
 								<h5>Your referral link is</h5>
 								<p><b id="affiliate_url"></b></p>
-								<p class="col-sm-8 offset-sm-2">Продвигайте свою реферальную ссылку в соцсетях и любым другим удобным вам способом, чтобы получить 5% от всех транзакций по вашей ссылке вскоре после завершения Supporter Round. Вы получите на вашу почту сообщение.</p>
+								<p class="col-sm-8 offset-sm-2"><b id="affiliate_text"></b></p>
 								<br><br>
 								<div class="col-sm-12 text-center sharing">
 									<h5>Share on</h5>
@@ -118,7 +118,7 @@
 									<span>Welcome to Affiliate Campaign!</span></h2>
 								<br>
 							<div class="col-md-8 offset-md-2 col-sm-12 text-center">
-							<p>Присоединяйтесь к кампании для продвижения <a href="https://wr.io/supporter_round" target="_blank">Supporter Round</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i> и получите по ее завершению 5% от всех транзакций полученных с вашей помощью.
+							<p>After the success of our first affiliate campaign, our <a href="https://wr.io/supporter_round" target="_blank">Supporter Round</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i> affiliates campaign is live! Share with friends and investors alike and earn 5% of their investments through your link.
 							<br><br>
 							Также здесь могут проверить свой баланс участники Airdrop Campaign.</p>
 							<br><br><br>
@@ -263,6 +263,8 @@
 				});
 				affiliate_balance_show();
 				document.getElementById("affiliate_url").innerHTML = '<a href="https://wr.io/supporter_round/?friend='+email_address.value+'" target="_blank">https://wr.io/supporter_round?friend='+email_address.value+'</a></b>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i>';
+				document.getElementById("affiliate_url").innerHTML = 'Promote свою реферальную ссылку в соцсетях и любым другим удобным для вас способом и получите 5% от всех транзакций прошедших по вашей реферальной ссылке, вскоре после завершения Supporter Round.<br>
+					На ваш адрес '+email_address.value+' придет письмо с claim reward ссылкой.';
 				document.getElementById('part').style.display = 'none';
 			}
 		}
