@@ -77,15 +77,7 @@
 								<br>
 								<div class="col-sm-12 text-center sharing">
 									<h4>Share on</h3>
-									<!--<a href="http://www.facebook.com/sharer.php?s=100&p[title]=Became a Web 3.0 Atlas!&p[summary]=YOUR_SUMMARY&p[url]=https://wr.io/supporter_round?friend=test@gmail.com&p[images][0]=https://webrunes.com/img/cards/airdrop_thread.jpg" target="_blank" alt="Share Supporter Round"><em class="fa fa-facebook"></em></a>
-									<a href="https://twitter.com/share?url=https://wr.io/supporter_round?friend=test@gmail.com&text=[text]" target="_blank" alt="Tweet Supporter Round"><em class="fa fa-twitter"></em></a>
-									<a href="https://t.me/share/url?url=https://wr.io/supporter_round?friend=test@gmail.com&text=[text]" target="_blank" alt="Share Supporter Round"><em class="fa fa-telegram"></em></a>-->
-
-									<a href="https://t.me/share/url?url=https://wr.io/supporter_round?friend=test@gmail.com&text=Became a Web 3.0 Atlas!" target="_blank" alt="Share Supporter Round"><em class="fa fa-telegram"></em></a>
-									<a href="https://www.facebook.com/sharer/sharer.php?u=https://wr.io/supporter_round?friend=test@gmail.com&t=Became a Web 3.0 Atlas!" class="share facebook" data-network="facebook"><em class="fa fa-facebook"></em></a>
-									<a href="https://twitter.com/share?url=https://wr.io/supporter_round?friend=test@gmail.com&text=Became a Web 3.0 Atlas!" class="share twitter" data-network="twitter"><em class="fa fa-twitter"></em></a>
-									<a href="https://plus.google.com/share?url=https://wr.io/supporter_round?friend=test@gmail.com&text=Became a Web 3.0 Atlas!" class="share google" data-network="google"><em class="fa fa fa-google-plus"></em></a>
-									<a href="https://www.linkedin.com/shareArticle?mini=true&url=https://wr.io/supporter_round?friend=test@gmail.com&title=Became a Web 3.0 Atlas!" class="share linkedin" data-network="linkedin"><em class="fa fa-linkedin"></em></a>
+									<div id="share_links"></div>
 								</div>
 								<br><br><br>
 								<h4>Your affiliates</h3>
@@ -177,6 +169,18 @@
 				document.getElementById('opacity_affiliate').style.opacity = '100';
 				document.getElementById('opacity_affiliate').style.transition = 'all 2000ms';
 
+				var share_url = 'https://wr.io/supporter_round?friend='+email_address.value;
+				var share_text = 'Became a Web 3.0 Atlas!';
+
+				document.getElementById("share_links").innerHTML = '
+				<a href="https://t.me/share/url?url='+share_url+'&text='+share_text+'" target="_blank"><em class="fa fa-telegram"></em></a>
+				<a href="https://www.facebook.com/sharer/sharer.php?u='+share_url+'&t='+share_text+'" class="share facebook" data-network="facebook"><em class="fa fa-facebook"></em></a>
+				<a href="https://twitter.com/share?url='+share_url+'&text='+share_text+'" class="share twitter" data-network="twitter"><em class="fa fa-twitter"></em></a>
+				<a href="https://plus.google.com/share?url='+share_url+'&text='+share_text+'" class="share google" data-network="google"><em class="fa fa fa-google-plus"></em></a>
+				<a href="https://www.linkedin.com/shareArticle?mini=true&url='+share_url+'&title='+share_text+'" class="share linkedin" data-network="linkedin"><em class="fa fa-linkedin"></em></a>
+				'
+			);
+
 				$('#eth_reward').empty();
 				table = '<table class="table"><tr><th>Date</th><th>ETH Wallet</th><th>Transaction</th><th>Amount, ETH</th></tr>';
 
@@ -262,11 +266,6 @@
 				document.getElementById('opacity_airdrop').style.opacity = '100';
 				document.getElementById('opacity_airdrop').style.transition = 'all 2000ms';
 			}
-
-    function tweetCurrentPage()
-    {
-			window.open("https://twitter.com/share?url="+escape(window.location.href)+"&text="+document.title, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;
-		}
 	</script>
 	<script type="text/javascript">
 		var email_address;
