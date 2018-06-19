@@ -118,7 +118,7 @@
 									<span>Welcome to Affiliate Campaign!</span></h2>
 								<br>
 							<div class="col-md-8 offset-md-2 col-sm-12 text-center">
-							<p>After the success of our first affiliate campaign, <a href="https://wr.io/supporter_round" target="_blank">Supporter Round</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i> affiliates campaign is live! Share with friends and investors alike and earn <b>5%</b> of their investments through your link.
+							<p>After the success of our first affiliate campaign, <a href="https://wr.io/supporter_round" target="_blank">Supporter Round</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i> affiliates campaign is live!<br>Share with friends and investors alike and earn <b>5%</b> of their investments through your link.
 							<br><br>
 							Также здесь могут проверить свой баланс участники Airdrop Campaign.</p>
 							<br><br><br>
@@ -127,7 +127,7 @@
 							<div id="error">Please enter a valid email address.</div>
 							<div class="col-sm-12 text no-pd">
 								<div class="text-center">
-									<a href="#" class="btn" onClick="check();">Submit</a>
+									<input id="login_btn" class="btn" onClick="check();" value="Login">
 								</div>
 								<br><br>
 								<p class="text-center">Have questions? Contact us on webRunes <a href="https://t.me/webRunesGroup" target="_blank">Telegram group</a>&nbsp;&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i></p>
@@ -252,19 +252,22 @@
 
 		function check()
 		{
+			document.getElementById('login_btn').disabled = true;
+			document.getElementById('login_btn').value = 'Please wait';
 			document.getElementById('error').style.opacity = '0';
 			if(!document.getElementById("email_address").checkValidity())
 			{
 				document.getElementById('error').style.opacity = '100';
 				document.getElementById('error').style.transition = 'opacity 1000ms';
+				document.getElementById('login_btn').disabled = false;
+				document.getElementById('login_btn').value = 'Login';
 			} else {
 				$.ajax("https://docs.google.com/spreadsheets/d/10yfHohsWi8DZSuyorxPbh-k3A4MzKsZIzssyGHFE46w/gviz/tq?tqx=out:html&tq=SELECT+N+WHERE+B+CONTAINS+%27" + email_address.value + "%27").done(function(result){
 				$('#reward').html(result).show();
 				});
 				affiliate_balance_show();
 				document.getElementById("affiliate_url").innerHTML = '<a href="https://wr.io/supporter_round/?friend='+email_address.value+'" target="_blank">https://wr.io/supporter_round?friend='+email_address.value+'</a></b>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i>';
-				document.getElementById("affiliate_url").innerHTML = 'Promote свою реферальную ссылку в соцсетях и любым другим удобным для вас способом и получите 5% от всех транзакций прошедших по вашей реферальной ссылке, вскоре после завершения Supporter Round.<br>
-					На ваш адрес '+email_address.value+' придет письмо с claim reward ссылкой.';
+				document.getElementById("affiliate_url").innerHTML = 'Promote свою реферальную ссылку в соцсетях и любым другим удобным для вас способом и получите 5% от всех транзакций прошедших по вашей реферальной ссылке, вскоре после завершения Supporter Round.<br>На ваш адрес '+email_address.value+' придет письмо с claim reward ссылкой.';
 				document.getElementById('part').style.display = 'none';
 			}
 		}
