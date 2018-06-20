@@ -172,8 +172,7 @@
 				var share_url = 'https://wr.io/supporter_round?friend='+email_address.value;
 				var share_text = 'An open-source platform that upgrades to distributed machine-readable Web 3.0 with blockchain-powered cloud apps and provides secure and user-centric browsing experience!';
 
-				//var img="https://webrunes.com/img/supporter_round.jpg"; //for fb
-				var img="https://webrunes.com/img/ann_thread.jpg"; //test
+				var img="https://webrunes.com/img/cards/supporter_round.jpg"; //for fb
 				var totalurl=encodeURIComponent(share_url+'?img='+img);
 
 				document.getElementById("share_links").innerHTML = '<a href="https://t.me/share/url?url='+share_url+'&text='+share_text+'" target="_blank"><em class="fa fa-telegram"></em></a><a href="https://www.facebook.com/sharer/sharer.php?u='+totalurl+'" class="share facebook" data-network="facebook"><em class="fa fa-facebook"></em></a><a href="https://twitter.com/share?url='+share_url+'&text='+share_text+'" class="share twitter" data-network="twitter"><em class="fa fa-twitter"></em></a><a href="https://plus.google.com/share?url='+share_url+'&text='+share_text+'" class="share google" data-network="google"><em class="fa fa fa-google-plus"></em></a><a href="https://www.linkedin.com/shareArticle?mini=true&url='+share_url+'&title='+share_text+'" class="share linkedin" data-network="linkedin"><em class="fa fa-linkedin"></em></a>';
