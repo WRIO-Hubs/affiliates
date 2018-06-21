@@ -38,11 +38,6 @@
 	.sharing a{font-size:32px;margin:0 12px}
 	.menu-link{margin:4px!important}
 	</style>
-
-	<meta property="og:image" content="https://webrunes.com/img/cards/supporter_round.jpg" /> //for fb share
-	<meta property="og:description" content="Coaches share their secrets to success so you can rock 2015. Join us for this inspiring, rejuvenating, motivating look at what secret sauce these coaches use to succeed in their business. This is for coaches of any level that are committed to changing the world. You will be elevated both in your life and your coaching business. Check out the topics below, there is something for everyone." />
-	<meta property="og:url"content="http://www.coachesneedsocial.com/coacheswisdomtelesummit/" />
-	<meta property="og:title" content="Coaches Wisdom Telesummit" />
 </head>
 
 <body class="theme-dark" data-spy="scroll" data-target="#mainnav" onload="onload();">
@@ -83,6 +78,7 @@
 								<div class="col-sm-12 text-center sharing">
 									<h4>Share on</h3>
 									<div id="share_links"></div>
+									<div class="sharethis-inline-share-buttons"></div>
 								</div>
 								<br><br><br>
 								<h4>Your affiliates</h3>
@@ -158,6 +154,8 @@
 	<script src="https://wr.io/assets/js/jquery.bundle.js"></script>
 	<script src="https://wr.io/assets/js/script.js"></script>
 
+	<script src="//platform-api.sharethis.com/js/sharethis.js#property=5b2bdcbda7603d0012fa8890&product=inline-share-buttons"></script>
+
 	<script>
 		var table;
 		var share = 0;
@@ -178,7 +176,7 @@
 				var share_url = 'http://affiliates.wr.io/test.html';
 				var share_text = 'The next level of browsing experience is here. Grab the opportunity to become an early supporter today and Recieve 25,000 WGD per 1 ETH!';
 
-				document.getElementById("share_links").innerHTML = '<a href="https://t.me/share/url?url='+share_url+'&text='+share_text+'" target="_blank"><em class="fa fa-telegram"></em></a><a href="https://www.facebook.com/sharer/sharer.php?u='+share_url+'" class="share facebook" data-network="facebook"><em class="fa fa-facebook"></em></a><a href="https://twitter.com/share?url='+share_url+'&text='+share_text+'" class="share twitter" data-network="twitter"><em class="fa fa-twitter"></em></a><a href="https://plus.google.com/share?url='+share_url+'&text='+share_text+'" class="share google" data-network="google"><em class="fa fa fa-google-plus"></em></a><a href="https://www.linkedin.com/shareArticle?mini=true&url='+share_url+'&title='+share_text+'" class="share linkedin" data-network="linkedin"><em class="fa fa-linkedin"></em></a>';
+				//document.getElementById("share_links").innerHTML = '<a href="https://t.me/share/url?url='+share_url+'&text='+share_text+'" target="_blank"><em class="fa fa-telegram"></em></a><a href="https://www.facebook.com/sharer/sharer.php?u='+share_url+'" class="share facebook" data-network="facebook"><em class="fa fa-facebook"></em></a><a href="https://twitter.com/share?url='+share_url+'&text='+share_text+'" class="share twitter" data-network="twitter"><em class="fa fa-twitter"></em></a><a href="https://plus.google.com/share?url='+share_url+'&text='+share_text+'" class="share google" data-network="google"><em class="fa fa fa-google-plus"></em></a><a href="https://www.linkedin.com/shareArticle?mini=true&url='+share_url+'&title='+share_text+'" class="share linkedin" data-network="linkedin"><em class="fa fa-linkedin"></em></a><a href="https://www.pinterest.com/shareArticle?mini=true&url='+share_url+'&title='+share_text+'" class="share pinterest" data-network="pinterest"><em class="fa fa-linkedin"></em></a>';
 
 				$('#eth_reward').empty();
 				table = '<table class="table"><tr><th>Date</th><th>ETH Wallet</th><th>Transaction</th><th>Amount, ETH</th></tr>';
