@@ -52,7 +52,6 @@
 					<img class="logo logo-dark" alt="logo" src="https://wr.io/images/logo.png" srcset="https://wr.io/images/logo2x.png 2x">
 					<img class="logo logo-light" alt="logo" src="https://wr.io/images/logo-white.png" srcset="https://wr.io/images/logo-white2x.png 2x">
 				</a>
-
 				<ul class="navbar-nav navbar-btns animated remove-animation">
 					<li class="nav-item"><a class="nav-link btn btn-outline menu-link" href="https://wr.io" data-animate="fadeInDown" data-delay="1">Back to wr.io</a></li>
 				</ul>
@@ -246,6 +245,17 @@
 					$('#eth_balance').prepend(''+share/100*5);
 				}
 		}
+
+		function airdrop_balance_show()
+			{
+				document.getElementById("airdrop_btn").style.display = "none";
+				document.getElementById("affiliate_btn").style.display = "block";
+				document.getElementById("affiliate_content").style.display = "none";
+				document.getElementById("content").style.display = "block";
+				document.getElementById('opacity_affiliate').style.opacity = '0';
+				document.getElementById('opacity_airdrop').style.opacity = '100';
+				document.getElementById('opacity_airdrop').style.transition = 'all 2000ms';
+			}
 	</script>
 	<script type="text/javascript">
 		var email_address;
