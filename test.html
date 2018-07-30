@@ -200,7 +200,7 @@
 				});
 
 				$('#eth_balance').empty();
-				$('#eth_balance').prepend(''+<img src="loading.gif" alt="Loading" width="48" height="48" />);
+				$('#eth_balance').prepend('<img src="loading.gif" alt="Loading" width="48" height="48" />');
 				url_complete = "https://spreadsheets.google.com/feeds/list/10yfHohsWi8DZSuyorxPbh-k3A4MzKsZIzssyGHFE46w/1/public/values?alt=json";
 				$.getJSON(url_complete, function(data) {
 				 var entry = data.feed.entry;
