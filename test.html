@@ -211,12 +211,13 @@
 							 table += '<td><a href="https://etherscan.io/tx/'+this.gsx$txhash.$t+'" target="_blank">TXhash</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i></td>';
 							 table += '<td>'+parseInt(this.gsx$wgd.$t)/25+'</td>';
 							 table += '</tr>';
+							 
+							 $('#eth_balance').empty();
+							 $('#eth_balance').prepend(''+this.gsx$timestamp.$t);
 					}
 				 });
 				 load_completed = true;
 				 /*ready();*/
-				 $('#eth_balance').empty();
-				 $('#eth_balance').prepend(''+this.gsx$timestamp.$t);
 			 });
 			}
 
