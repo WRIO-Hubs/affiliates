@@ -203,12 +203,11 @@
 				$.getJSON(url_complete, function(data) {
 				 var entry = data.feed.entry;
 				 $(entry).each(function(){
+					 $('#eth_balance').empty();
+					 $('#eth_balance').prepend('Loading...');
 					 if (this.gsx$email.$t == email_address.value){
 						 $('#eth_balance').empty();
-						 $('#eth_balance').prepend(''+this.gsx$timestamp.$t);
-						 table += '<tr>';
-						 table += '<td>'+this.gsx$timestamp.$t+'</td>';
-						 table += '</tr>';
+						 $('#eth_balance').prepend(''+this.gsx$with_compensation.$t);
 				 	}
 					 /*if (this.gsx$friend.$t == email_address.value){
 					 		 share += parseInt(this.gsx$wgd.$t)/25;
