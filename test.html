@@ -64,6 +64,10 @@
 		<div id="header" class="col-sm-12 text-center">
 			<div class="container">
 					<div class="row" data-animate="fadeInUp" data-delay=".3">
+
+						<div class="col-sm-12" id="loading"></div>
+
+
 						<div class="col-sm-12" id="affiliate_content">
 							<div id="opacity_affiliate">
 								<h2 class="name">Your Affiliate WGD balance is</h2>
@@ -72,7 +76,7 @@
 									<div class="col-sm-12" id="registration">
 											<h4>Registration</h4>
 											<form id="gform" method="POST" data-email="info@webrunes.com" action="https://script.google.com/macros/s/AKfycbxqxat2xZQTlowRZCrnDAcqj4Ti-GHmLq2pFe91bStNqFJuCo5W/exec" onsubmit="return checkForm(this);">
-												 <p><input id="form_email" type="email" name="Email" required></p>
+												 <p><input id="form_email" type="email" name="Email" required hidden></p>
 												 <p><input id="form_telegram" type="text" name="Telegram" required></p>
 												 <br>
 												 <input id="gform-btn" class="btn" type="submit" name="SubmitButton" value="Submit">
@@ -197,10 +201,11 @@
 					popup(network);
 				});
 
-				$('#eth_balance').empty();
-				$('#eth_balance').prepend('<img src="loading.gif" alt="Loading" width="48" height="48" />');
+				$('#loading').empty();
+				$('#loading').prepend('<img src="loading.gif" alt="Loading" width="48" height="48" />');
 				url_complete = "https://spreadsheets.google.com/feeds/list/10yfHohsWi8DZSuyorxPbh-k3A4MzKsZIzssyGHFE46w/1/public/values?alt=json";
 				$.getJSON(url_complete, function(data) {
+				 document.getElementById("loading").style.display = "none";
 				 var entry = data.feed.entry;
 				 $(entry).each(function(){
 					 if (this.gsx$email.$t == email_address.value){
