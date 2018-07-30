@@ -198,7 +198,7 @@
 					popup(network);
 				});
 
-				url_complete = "https://spreadsheets.google.com/feeds/list/1YqDOMfPw7Xd5rryouF931Y3aSfUboNGkip7qMdvY3BQ/2/public/values?alt=json";
+				url_complete = "https://docs.google.com/spreadsheets/d/10yfHohsWi8DZSuyorxPbh-k3A4MzKsZIzssyGHFE46w/public/values?alt=json";
 				$.getJSON(url_complete, function(data) {
 				 var entry = data.feed.entry;
 				 $(entry).each(function(){
@@ -267,7 +267,7 @@
 				});
 				affiliate_balance_show();
 				document.getElementById("affiliate_url").innerHTML = '<a href="https://affiliates.wr.io/?friend='+email_address.value+'" target="_blank">https://affiliates.wr.io/?friend='+email_address.value+'</a></b>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i>';
-				document.getElementById("affiliate_text").innerHTML = 'Promote the referral link in social media or in any other way and get 5% of all ETH transactions made on its basis.<br>Reward will be distributed within 21 days post Soft Cap is reached, a claim reward link will be sent to your email '+email_address.value;
+				document.getElementById("affiliate_text").innerHTML = 'Promote the referral link in social media or in any other way and get 25WGD reward per invited friend.<br>Reward will be distributed within 21 days post Soft Cap is reached, a claim reward link will be sent to your email '+email_address.value;
 				document.getElementById('part').style.display = 'none';
 			}
 		}
