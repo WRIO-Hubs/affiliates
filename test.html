@@ -234,7 +234,7 @@
 					if (share > 0) {
 					table += '<tr class="total"><td colspan="3" style="text-align:right">Total</td><td>'+share+'</td></tr>';
 					table += '<tr class="total"><td colspan="3" style="text-align:right">Your 5% Share</td><td>'+share/100*5+'</td></tr></table>';
-				} else {
+				} else if (load_completed == true && registered == false) {
 					console.log('not registered!');
 					table += '<tr class="total"><td colspan="4">No affiliates yet</td></tr></table>';
 				}
