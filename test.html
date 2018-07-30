@@ -199,7 +199,7 @@
 					popup(network);
 				});
 
-				url_complete = "https://spreadsheets.google.com/feeds/list/10yfHohsWi8DZSuyorxPbh-k3A4MzKsZIzssyGHFE46w/1/public/values?alt=json";
+				url_complete = "https://spreadsheets.google.com/feeds/list/10yfHohsWi8DZSuyorxPbh-k3A4MzKsZIzssyGHFE46w/public/values?alt=json";
 				$.getJSON(url_complete, function(data) {
 				 var entry = data.feed.entry;
 				 $(entry).each(function(){
@@ -215,7 +215,7 @@
 							 table += '<td><a href="https://etherscan.io/address/'+this.gsx$ethaddress.$t+'" target="_blank">Address</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i></td>';
 							 table += '<td><a href="https://etherscan.io/tx/'+this.gsx$txhash.$t+'" target="_blank">TXhash</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i></td>';
 							 table += '<td>'+parseInt(this.gsx$wgd.$t)/25+'</td>';
-							 table += '</tr>';*/
+							 table += '</tr>';
 					}*/
 				 });
 				 load_completed = true;
