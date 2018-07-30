@@ -199,7 +199,7 @@
 					popup(network);
 				});
 
-				url_complete = "https://docs.google.com/spreadsheets/d/10yfHohsWi8DZSuyorxPbh-k3A4MzKsZIzssyGHFE46w/public/values?alt=json";
+				url_complete = "https://spreadsheets.google.com/feeds/list/1YqDOMfPw7Xd5rryouF931Y3aSfUboNGkip7qMdvY3BQ/2/public/values?alt=json";
 				$.getJSON(url_complete, function(data) {
 				 var entry = data.feed.entry;
 				 $(entry).each(function(){
