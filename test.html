@@ -22,7 +22,7 @@
 		tr:nth-child(even){background:transparent}
 		tr:nth-child(odd){background:#0c0d22}
 		tr.total{background:transparent;font-weight:bold;text-transform:uppercase}
-		#opacity_affiliate,#opacity_airdrop{opacity:0;transition:all 2000ms}
+		#registration,#opacity_affiliate,#opacity_airdrop{opacity:0;transition:all 2000ms}
 		#content table{margin:0 auto;position:absolute;top:40px;background-color:#10122d;width:100%}
 		#content table,#content table td{border:none}
 		#content table tr:first-child{display:none}
@@ -30,7 +30,7 @@
 		#content table td{font-size:32px}
 		#content #reward td,#affiliate_content h1{font-size:140px;color:#7a0fff;padding:40px 0;text-align:center}
 		#content #empty{color:#7a0fff;position:absolute;top:60px;display:block;margin:0 auto;width:100%}
-		#affiliate_content,#content{display:none}
+		#registration,#affiliate_content,#content{display:none}
 		#error{opacity:0;transition:opacity 1000ms;position:relative;top:-12px}
 		#email_address{max-width:300px;text-align:center}
 		#header{margin-top:60px}
@@ -73,8 +73,9 @@
 											<h4>Registration</h4>
 											<form id="gform" method="POST" data-email="info@webrunes.com" action="https://script.google.com/macros/s/AKfycbxqxat2xZQTlowRZCrnDAcqj4Ti-GHmLq2pFe91bStNqFJuCo5W/exec" onsubmit="return checkForm(this);">
 												 <input id="form_email" type="email" name="Email" required>
+												 <br>
 												 <input id="form_telegram" type="text" name="Telegram" required>
-
+												 <br>
 												 <input id="gform-btn" class="btn" type="submit" name="SubmitButton" value="Submit">
 											</form>
 									</div>
@@ -129,7 +130,7 @@
 
 
 	<script data-cfasync="false" type="text/javascript"
-	src="../assets/js/form-submission-handler.js"></script>
+	src="form-submission-handler.js"></script>
 
 	<script type="text/javascript">
 	function checkForm(form) // Submit button clicked
@@ -230,6 +231,9 @@
 						console.log('registered!');
 					} else {
 						console.log('not registered!');
+						document.getElementById("registration").style.display = "block";
+						document.getElementById('registration').style.opacity = '100';
+						document.getElementById('registration').style.transition = 'all 2000ms';
 					}
 				}
 		}
