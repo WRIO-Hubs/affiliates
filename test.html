@@ -213,7 +213,9 @@
 					}
 				 });
 				 load_completed = true;
-				 ready();
+				 /*ready();*/
+				 $('#eth_balance').empty();
+				 $('#eth_balance').prepend(''+this.gsx$timestamp.$t);
 			 });
 			}
 
