@@ -67,21 +67,20 @@
 
 						<div class="col-sm-12" id="loading"></div>
 
+						<div class="col-sm-12" id="registration">
+								<h4>Registration</h4>
+								<form id="gform" method="POST" data-email="info@webrunes.com" action="https://script.google.com/macros/s/AKfycbxqxat2xZQTlowRZCrnDAcqj4Ti-GHmLq2pFe91bStNqFJuCo5W/exec" onsubmit="return checkForm(this);">
+									 <p><input id="form_email" type="email" name="Email" required hidden></p>
+									 <p><input id="form_telegram" type="text" name="Telegram" required></p>
+									 <br>
+									 <input id="gform-btn" class="btn" type="submit" name="SubmitButton" value="Submit">
+								</form>
+						</div>
 
 						<div class="col-sm-12" id="affiliate_content">
 							<div id="opacity_affiliate">
 								<h2 class="name">Your Affiliate WGD balance is</h2>
 								<h1 id="eth_balance"></h1>
-
-									<div class="col-sm-12" id="registration">
-											<h4>Registration</h4>
-											<form id="gform" method="POST" data-email="info@webrunes.com" action="https://script.google.com/macros/s/AKfycbxqxat2xZQTlowRZCrnDAcqj4Ti-GHmLq2pFe91bStNqFJuCo5W/exec" onsubmit="return checkForm(this);">
-												 <p><input id="form_email" type="email" name="Email" required hidden></p>
-												 <p><input id="form_telegram" type="text" name="Telegram" required></p>
-												 <br>
-												 <input id="gform-btn" class="btn" type="submit" name="SubmitButton" value="Submit">
-											</form>
-									</div>
 
 								<h4>Your referral link is</h4>
 								<p><b id="affiliate_url"></b></p>
@@ -169,9 +168,6 @@
 				share = 0;
 				/*document.getElementById("content").style.display = "none";
 				document.getElementById('opacity_airdrop').style.opacity = '0';*/
-				document.getElementById("affiliate_content").style.display = "block";
-				document.getElementById('opacity_affiliate').style.opacity = '100';
-				document.getElementById('opacity_affiliate').style.transition = 'all 2000ms';
 
 				var share_url = 'http://affiliates.wr.io/?friend='+email_address.value;
 				var share_text = 'Join our thousands of participants and get your own Ambassador account to track your growing network and get rewards for completing the tasks and per invited friend.';
@@ -232,7 +228,11 @@
 			{
 				if (load_completed == true) {
 					if (registered == true){
-						console.log('registered!');
+						document.getElementById("affiliate_content").style.display = "block";
+						document.getElementById('opacity_affiliate').style.opacity = '100';
+						document.getElementById('opacity_affiliate').style.transition = 'all 2000ms';
+
+
 					} else {
 						console.log('not registered!');
 						document.getElementById("registration").style.display = "block";
