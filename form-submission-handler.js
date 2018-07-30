@@ -87,7 +87,7 @@ function handleFormSubmit(event) {  // handles form submit withtout any jquery
     xhr.onreadystatechange = function() {
         console.log( xhr.status, xhr.statusText )
         console.log(xhr.responseText);
-        //window.location = "thank_you.html";
+        window.location = "thank_you.html";
         // document.getElementById("gform").style.display = "none"; // hide form
         //var thankYouMessage = document.getElementById("thankyou_message");
         //if (thankYouMessage) {
