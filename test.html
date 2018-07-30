@@ -76,6 +76,7 @@
 									<div class="text-left">
 									<br>
 									<input id="form_email" type="email" name="Email" placeholder="Your email address" required hidden>
+				 				 	<input id="form_friend" type="text" name="Friend" hidden>
 									<h5 class="name">Telegram</h5>
 									<p><input id="form_telegram" type="text" name="Telegram" placeholder="Your Telegram name" required></p>
 									<p>Join our <a href="https://t.me/webRunesGroup" target="_blank">Telegram Group</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i> чтобы не пропустить новости. Оставайтесь в группе до soft cap reached. Reward 25 WGD.</p>
@@ -252,10 +253,12 @@
 						document.getElementById("affiliate_content").style.display = "block";
 						document.getElementById('opacity_affiliate').style.opacity = '100';
 						document.getElementById('opacity_affiliate').style.transition = 'all 2000ms';
-
-
 					} else {
-						console.log('not registered!');
+						//take affiliate
+						var url_string = document.URL;
+						var url = new URL(url_string);
+						document.getElementById("form_friend").value = url.searchParams.get("friend");
+
 						document.getElementById("registration").style.display = "block";
 						document.getElementById('registration').style.opacity = '100';
 						document.getElementById('registration').style.transition = 'all 2000ms';
