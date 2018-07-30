@@ -72,9 +72,8 @@
 									<div class="col-sm-12" id="registration">
 											<h4>Registration</h4>
 											<form id="gform" method="POST" data-email="info@webrunes.com" action="https://script.google.com/macros/s/AKfycbxqxat2xZQTlowRZCrnDAcqj4Ti-GHmLq2pFe91bStNqFJuCo5W/exec" onsubmit="return checkForm(this);">
-												 <input id="form_email" type="email" name="Email" required>
-												 <br>
-												 <input id="form_telegram" type="text" name="Telegram" required>
+												 <p><input id="form_email" type="email" name="Email" required></p>
+												 <p><input id="form_telegram" type="text" name="Telegram" required></p>
 												 <br>
 												 <input id="gform-btn" class="btn" type="submit" name="SubmitButton" value="Submit">
 											</form>
@@ -234,6 +233,8 @@
 						document.getElementById("registration").style.display = "block";
 						document.getElementById('registration').style.opacity = '100';
 						document.getElementById('registration').style.transition = 'all 2000ms';
+
+						document.getElementById('form_email').value = email_address.value;
 					}
 				}
 		}
