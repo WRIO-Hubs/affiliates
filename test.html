@@ -199,15 +199,15 @@
 					popup(network);
 				});
 
+				$('#eth_balance').empty();
+				$('#eth_balance').prepend('Loading...');
 				url_complete = "https://spreadsheets.google.com/feeds/list/10yfHohsWi8DZSuyorxPbh-k3A4MzKsZIzssyGHFE46w/1/public/values?alt=json";
 				$.getJSON(url_complete, function(data) {
 				 var entry = data.feed.entry;
 				 $(entry).each(function(){
-					 $('#eth_balance').empty();
-					 $('#eth_balance').prepend('Loading...');
 					 if (this.gsx$email.$t == email_address.value){
 						 $('#eth_balance').empty();
-						 $('#eth_balance').prepend(''+this.gsx$with_compensation.$t);
+						 $('#eth_balance').prepend(''+this.gsx$reward.$t);
 				 	}
 					 /*if (this.gsx$friend.$t == email_address.value){
 					 		 share += parseInt(this.gsx$wgd.$t)/25;
