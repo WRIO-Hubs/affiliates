@@ -16,27 +16,26 @@
 	<link rel="stylesheet" href="https://wr.io/assets/css/theme.css">
 	<link rel="stylesheet" href="https://wr.io/assets/css/wrioos.css">
 	<style>
-	html,body{overflow:inherit!important}
-	table{border-collapse:separate;width:100%}
-	.table td,.table th{border-top:none}
-	tr:nth-child(even){background:transparent}
-	tr:nth-child(odd){background:#0c0d22}
-	tr.total{background:transparent;font-weight:bold;text-transform:uppercase}
-	#opacity_affiliate,#opacity_airdrop{opacity:0;transition:all 2000ms}
-	#content table{margin:0 auto;position:absolute;top:40px;background-color:#10122d;width:100%}
-	#content table,#content table td{border:none}
-	#content table tr:first-child{display:none}
-	#content table tr{background-color:transparent!important}
-	#content table td{font-size:32px}
-	#content #reward td,#affiliate_content h1{font-size:140px;color:#7a0fff;padding:40px 0;text-align:center}
-	#content #empty{color:#7a0fff;position:absolute;top:60px;display:block;margin:0 auto;width:100%}
-	#affiliate_content,#content{display:none}
-	#error{opacity:0;transition:opacity 1000ms;position:relative;top:-12px}
-	#email_address{max-width:300px;text-align:center}
-	#affiliate_btn,#airdrop_btn{display:none}
-	#header{margin-top:60px}
-	.sharing a{font-size:32px;margin:0 12px}
-	.menu-link{margin:4px!important}
+		html,body{overflow:inherit!important}
+		table{border-collapse:separate;width:100%}
+		.table td,.table th{border-top:none}
+		tr:nth-child(even){background:transparent}
+		tr:nth-child(odd){background:#0c0d22}
+		tr.total{background:transparent;font-weight:bold;text-transform:uppercase}
+		#opacity_affiliate,#opacity_airdrop{opacity:0;transition:all 2000ms}
+		#content table{margin:0 auto;position:absolute;top:40px;background-color:#10122d;width:100%}
+		#content table,#content table td{border:none}
+		#content table tr:first-child{display:none}
+		#content table tr{background-color:transparent!important}
+		#content table td{font-size:32px}
+		#content #reward td,#affiliate_content h1{font-size:140px;color:#7a0fff;padding:40px 0;text-align:center}
+		#content #empty{color:#7a0fff;position:absolute;top:60px;display:block;margin:0 auto;width:100%}
+		#affiliate_content,#content{display:none}
+		#error{opacity:0;transition:opacity 1000ms;position:relative;top:-12px}
+		#email_address{max-width:300px;text-align:center}
+		#header{margin-top:60px}
+		.sharing a{font-size:32px;margin:0 12px}
+		.menu-link{margin:4px!important}
 	</style>
 </head>
 
@@ -89,16 +88,24 @@
 
 						<div class="col-sm-12" id="content">
 							<div id="opacity_airdrop">
-								<h2>Your Airdrop WGD balance is
+								<h2>Registration
 									<br><span id="empty"><h1>0</h1><h6>unregistered user</h6></span>
-									<br><span id="reward">0</span>
-									<br>
-									<br>
-									<br>
-									<br>
-									<br></h2>
-								<br>
-								<br>
+									<br><span id="reward">0</span></h2>
+
+									<form id="gform" method="POST" data-email="info@webrunes.com"
+									   action="https://script.google.com/macros/s/AKfycbyZBkpxDstfnhec6qPW3uAA0E4aa6elbtCC01ai/exec">
+										 <input id="form_email" type="text" name="Email" hidden>
+										 <input id="form_ethaddress" type="text" name="ETHaddress" hidden>
+										 <input id="form_wgd" type="text" name="WGD" hidden>
+										 <input id="form_firstname" type="text" name="FirstName" hidden>
+										 <input id="form_lastname" type="text" name="LastName" hidden>
+										 <input id="form_kyc" type="text" name="KYC" hidden>
+										 <input id="form_friend" type="text" name="Friend" hidden>
+										 <input id="form_txhash" type="text" name="TXhash" hidden>
+
+										 <input id="gform-btn" class="btn" type="submit" name="SubmitButton" value="Submit" hidden>
+									</form>
+
 								<div class="col-sm-12 text no-pd">
 									<p class="text-center">Reward will be distributed within 21 days post Token Sale (coming July 31, 2018).
 										<br><br>Have questions? Contact us on webRunes <a href="https://t.me/webRunesGroup" target="_blank">Telegram group</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i></p>
@@ -140,7 +147,7 @@
 	<div id="preloader">
 		<div id="loader"></div>
 		<div class="loader-section loader-top"></div>
-   		<div class="loader-section loader-bottom"></div>
+ 		<div class="loader-section loader-bottom"></div>
 	</div>
 	<!-- Preloader End -->
 
@@ -163,31 +170,13 @@
 				document.getElementById('opacity_affiliate').style.opacity = '100';
 				document.getElementById('opacity_affiliate').style.transition = 'all 2000ms';
 
-				var share_url = 'https://wr.io/supporter_round/?friend='+email_address.value;
-				var share_text = 'The next level of browsing experience is here. Grab the opportunity to become an early supporter today and receive 25,000 WGD per 1 ETH!';
+				var share_url = 'http://affiliates.wr.io/?friend='+email_address.value;
+				var share_text = 'Join our thousands of participants and get your own "Ambassador" account to track your growing network and get rewards for completing the tasks and per invited friend.';
 
 				document.getElementById("share_links").innerHTML = '<a href="https://t.me/share/url?url='+share_url+'&text='+share_text+'" target="_blank"><em class="fa fa-telegram"></em></a><a href="https://www.facebook.com/sharer/sharer.php?u='+share_url+'" class="share facebook" data-network="facebook"><em class="fa fa-facebook"></em></a><a href="https://twitter.com/share?url='+share_url+'&text='+share_text+'" class="share twitter" data-network="twitter"><em class="fa fa-twitter"></em></a><a href="https://plus.google.com/share?url='+share_url+'&text='+share_text+'" class="share google" data-network="google"><em class="fa fa fa-google-plus"></em></a><a href="https://www.linkedin.com/shareArticle?mini=true&url='+share_url+'&title='+share_text+'" class="share linkedin" data-network="linkedin"><em class="fa fa-linkedin"></em></a><a href="http://pinterest.com/pin/create/button/?url='+share_url+'&media=https://webrunes.com/img/cards/supporter_round.jpg&description='+share_text+'" count-layout="horizontal" class="share pinterest" data-network="pinterest" target="_blank"><em class="fa fa-pinterest"></em></a>';
 
 				$('#eth_reward').empty();
 				table = '<table class="table"><tr><th>Date</th><th>ETH Wallet</th><th>Transaction</th><th>Amount, ETH</th></tr>';
-
-				/*url = "https://spreadsheets.google.com/feeds/list/1YqDOMfPw7Xd5rryouF931Y3aSfUboNGkip7qMdvY3BQ/1/public/values?alt=json";
-				$.getJSON(url, function(data) {
-				 var entry = data.feed.entry;
-				 $(entry).each(function(){
-					 if (this.gsx$friend.$t == email_address.value){
-							 table += '<tr>';
-							 table += '<td>'+this.gsx$timestamp.$t+'</td>';
-							 table += '<td>'+this.gsx$ethaddress.$t+'</td>';
-							 table += '<td>'+this.gsx$wgd.$t+'</td>';
-							 table += '<td>'+this.gsx$kyc.$t+'</td>';
-							 table += '<td>'+Number(this.gsx$wgd.$t)/100*5+'</td>';
-							 table += '</tr>';
-					}
-				 });
-				 load_responses = true;
-				 ready();
-			 });*/
 
 			 $('a.share').click(function(e){
 				e.preventDefault();
@@ -206,7 +195,7 @@
 				    var options = 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,';
 				    window.open(href, '', options+'height='+networks[network].height+',width='+networks[network].width);
 				}
-				popup(network);
+					popup(network);
 				});
 
 				url_complete = "https://spreadsheets.google.com/feeds/list/1YqDOMfPw7Xd5rryouF931Y3aSfUboNGkip7qMdvY3BQ/2/public/values?alt=json";
@@ -274,11 +263,11 @@
 				document.getElementById('login_btn').value = 'Submit';
 			} else {
 				$.ajax("https://docs.google.com/spreadsheets/d/10yfHohsWi8DZSuyorxPbh-k3A4MzKsZIzssyGHFE46w/gviz/tq?tqx=out:html&tq=SELECT+N+WHERE+B+CONTAINS+%27" + email_address.value + "%27").done(function(result){
-				$('#reward').html(result).show();
+					$('#reward').html(result).show();
 				});
 				affiliate_balance_show();
-				document.getElementById("affiliate_url").innerHTML = '<a href="https://wr.io/supporter_round/?friend='+email_address.value+'" target="_blank">https://wr.io/supporter_round/?friend='+email_address.value+'</a></b>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i>';
-				document.getElementById("affiliate_text").innerHTML = 'Promote the referral link in social media or in any other way and get 5% of all ETH transactions made on its basis.<br>Soon after the Supporter Round is over, a claim reward link will be sent to your email '+email_address.value;
+				document.getElementById("affiliate_url").innerHTML = '<a href="https://affiliates.wr.io/?friend='+email_address.value+'" target="_blank">https://affiliates.wr.io/?friend='+email_address.value+'</a></b>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i>';
+				document.getElementById("affiliate_text").innerHTML = 'Promote the referral link in social media or in any other way and get 5% of all ETH transactions made on its basis.<br>Reward will be distributed within 21 days post Soft Cap is reached, a claim reward link will be sent to your email '+email_address.value;
 				document.getElementById('part').style.display = 'none';
 			}
 		}
