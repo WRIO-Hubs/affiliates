@@ -203,18 +203,20 @@
 				$.getJSON(url_complete, function(data) {
 				 var entry = data.feed.entry;
 				 $(entry).each(function(){
-					 if (this.gsx$friend.$t == email_address.value){
-					 		 /*share += parseInt(this.gsx$wgd.$t)/25;
+					 $('#eth_balance').empty();
+					 $('#eth_balance').prepend(''+this.gsx$timestamp.$t);
+					 table += '<tr>';
+					 table += '<td>'+this.gsx$timestamp.$t+'</td>';
+					 table += '</tr>';
+					 /*if (this.gsx$friend.$t == email_address.value){
+					 		 share += parseInt(this.gsx$wgd.$t)/25;
 							 table += '<tr>';
 							 table += '<td>'+this.gsx$timestamp.$t+'</td>';
 							 table += '<td><a href="https://etherscan.io/address/'+this.gsx$ethaddress.$t+'" target="_blank">Address</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i></td>';
 							 table += '<td><a href="https://etherscan.io/tx/'+this.gsx$txhash.$t+'" target="_blank">TXhash</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i></td>';
 							 table += '<td>'+parseInt(this.gsx$wgd.$t)/25+'</td>';
 							 table += '</tr>';*/
-
-							 $('#eth_balance').empty();
-							 $('#eth_balance').prepend(''+this.gsx$timestamp.$t);
-					}
+					}*/
 				 });
 				 load_completed = true;
 				 /*ready();*/
