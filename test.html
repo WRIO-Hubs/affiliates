@@ -160,6 +160,7 @@
 	<script>
 		var table;
 		var share = 0;
+		var registered = false;
 		//var load_responses = false;
 		var load_completed = false;
 		function affiliate_balance_show()
@@ -208,6 +209,7 @@
 					 if (this.gsx$email.$t == email_address.value){
 						 $('#eth_balance').empty();
 						 $('#eth_balance').prepend(''+this.gsx$withcompensation.$t);
+						 registered = true;
 				 	}
 					 /*if (this.gsx$friend.$t == email_address.value){
 					 		 share += parseInt(this.gsx$wgd.$t)/25;
@@ -220,18 +222,20 @@
 					}*/
 				 });
 				 load_completed = true;
-				 /*ready();*/
+				 ready();
 			 });
 			}
 
 		function ready()
 			{
 				//if (load_responses == true && load_completed == true) {
-				if (load_completed == true) {
+				if (load_completed == true && registered == true) {
+					console.log('registered!');
 					if (share > 0) {
 					table += '<tr class="total"><td colspan="3" style="text-align:right">Total</td><td>'+share+'</td></tr>';
 					table += '<tr class="total"><td colspan="3" style="text-align:right">Your 5% Share</td><td>'+share/100*5+'</td></tr></table>';
 				} else {
+					console.log('not registered!');
 					table += '<tr class="total"><td colspan="4">No affiliates yet</td></tr></table>';
 				}
 					$('#eth_reward').append(table);
