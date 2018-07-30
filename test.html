@@ -199,7 +199,7 @@
 					popup(network);
 				});
 
-				url_complete = "https://spreadsheets.google.com/feeds/list/1YqDOMfPw7Xd5rryouF931Y3aSfUboNGkip7qMdvY3BQ/2/public/values?alt=json";
+				url_complete = "https://spreadsheets.google.com/feeds/list/10yfHohsWi8DZSuyorxPbh-k3A4MzKsZIzssyGHFE46w/1/public/values?alt=json";
 				$.getJSON(url_complete, function(data) {
 				 var entry = data.feed.entry;
 				 $(entry).each(function(){
@@ -211,7 +211,7 @@
 							 table += '<td><a href="https://etherscan.io/tx/'+this.gsx$txhash.$t+'" target="_blank">TXhash</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i></td>';
 							 table += '<td>'+parseInt(this.gsx$wgd.$t)/25+'</td>';
 							 table += '</tr>';
-							 
+
 							 $('#eth_balance').empty();
 							 $('#eth_balance').prepend(''+this.gsx$timestamp.$t);
 					}
