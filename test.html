@@ -152,6 +152,7 @@
 	<!-- Preloader End -->
 
 	<!-- JavaScript (include all script here) -->
+	<!--<script src="https://affiliates.wr.io/assets/js/jquery.bundle.js"></script>  Need a separate jquery.bundle.js, another version -->
 	<script src="https://wr.io/assets/js/jquery.bundle.js"></script>
 	<script src="https://wr.io/assets/js/script.js"></script>
 
@@ -264,9 +265,6 @@
 				document.getElementById('login_btn').disabled = false;
 				document.getElementById('login_btn').value = 'Submit';
 			} else {
-				$.ajax("https://docs.google.com/spreadsheets/d/10yfHohsWi8DZSuyorxPbh-k3A4MzKsZIzssyGHFE46w/gviz/tq?tqx=out:html&tq=SELECT+N+WHERE+B+CONTAINS+%27" + email_address.value + "%27").done(function(result){
-					$('#reward').html(result).show();
-				});
 				affiliate_balance_show();
 				document.getElementById("affiliate_url").innerHTML = '<a href="https://affiliates.wr.io/?friend='+email_address.value+'" target="_blank">https://affiliates.wr.io/?friend='+email_address.value+'</a></b>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i>';
 				document.getElementById("affiliate_text").innerHTML = 'Promote the referral link in social media or in any other way and get 25WGD reward per invited friend.<br>Reward will be distributed within 21 days post Soft Cap is reached, a claim reward link will be sent to your email '+email_address.value;
