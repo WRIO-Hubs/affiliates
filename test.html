@@ -212,6 +212,7 @@
 	<script>
 		var table;
 		var registered = false;
+		var referrals = false;
 		var total_reward = 0;
 		//var load_responses = false;
 		var load_completed = false;
@@ -260,6 +261,7 @@
 						 total_reward += parseInt(this.gsx$withcompensation.$t);
 				 	}
 				 if (this.gsx$friend.$t == email_address.value){
+					 	 referrals = true;
 				 		 total_reward += 25;
 						 table += '<tr>';
 						 table += '<td>'+this.gsx$timestamp.$t+'</td>';
@@ -278,6 +280,11 @@
 		function ready()
 			{
 				if (load_completed == true) {
+
+					if (referrals == false) {
+						table += '<tr class="total"><td colspan="2">No affiliates yet</td></tr></table>';
+					}
+
 					if (registered == true){
 						document.getElementById("affiliate_content").style.display = "block";
 						document.getElementById('opacity_affiliate').style.opacity = '100';
