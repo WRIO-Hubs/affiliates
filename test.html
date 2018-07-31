@@ -222,9 +222,6 @@
 
 				document.getElementById("share_links").innerHTML = '<a href="https://t.me/share/url?url='+share_url+'&text='+share_text+'" target="_blank"><em class="fa fa-telegram"></em></a><a href="https://www.facebook.com/sharer/sharer.php?u='+share_url+'" class="share facebook" data-network="facebook"><em class="fa fa-facebook"></em></a><a href="https://twitter.com/share?url='+share_url+'&text='+share_text+'" class="share twitter" data-network="twitter"><em class="fa fa-twitter"></em></a><a href="https://plus.google.com/share?url='+share_url+'&text='+share_text+'" class="share google" data-network="google"><em class="fa fa fa-google-plus"></em></a><a href="https://www.linkedin.com/shareArticle?mini=true&url='+share_url+'&title='+share_text+'" class="share linkedin" data-network="linkedin"><em class="fa fa-linkedin"></em></a><a href="http://pinterest.com/pin/create/button/?url='+share_url+'&media=https://webrunes.com/img/cards/affiliates2.jpg&description='+share_text+'" count-layout="horizontal" class="share pinterest" data-network="pinterest" target="_blank"><em class="fa fa-pinterest"></em></a>';
 
-				$('#eth_reward').empty();
-				table = '<table class="table"><tr><th>Date</th><th>ETH Wallet</th><th>Transaction</th><th>Amount, ETH</th></tr>';
-
 			 $('a.share').click(function(e){
 				e.preventDefault();
 				var $link   = $(this);
@@ -247,6 +244,8 @@
 
 				$('#loading').empty();
 				$('#loading').prepend('<img src="loading.gif" alt="Loading" width="48" height="48" />');
+
+				table = '<table class="table"><tr><th>Date</th></tr>';
 				url_complete = "https://spreadsheets.google.com/feeds/list/10yfHohsWi8DZSuyorxPbh-k3A4MzKsZIzssyGHFE46w/1/public/values?alt=json";
 				$.getJSON(url_complete, function(data) {
 				 document.getElementById("loading").style.display = "none";
@@ -262,12 +261,10 @@
 				 		 //share += parseInt(this.gsx$wgd.$t)/25;
 						 table += '<tr>';
 						 table += '<td>'+this.gsx$timestamp.$t+'</td>';
-						 table += '<td><a href="https://etherscan.io/address/" target="_blank">Address</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i></td>';
-						 table += '<td><a href="https://etherscan.io/tx/" target="_blank">TXhash</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i></td>';
-						 table += '<td></td>';
 						 table += '</tr>';
 					}
 				 });
+				 table += '</table>';
 				 load_completed = true;
 				 ready();
 			 });
