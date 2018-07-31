@@ -254,6 +254,7 @@
 				$.getJSON(url_complete, function(data) {
 				 document.getElementById("loading").style.display = "none";
 				 var entry = data.feed.entry;
+				 total_reward = parseInt(this.gsx$withcompensation.$t);
 				 $(entry).each(function(){
 					 if (this.gsx$email.$t == email_address.value){
 						 registered = true;
@@ -268,7 +269,6 @@
 				 });
 				 table += '</table>';
 				 load_completed = true;
-					 total_reward += parseInt(this.gsx$withcompensation.$t);
 					 $('#eth_balance').empty();
 					 $('#eth_balance').prepend(''+total_reward);
 				 ready();
