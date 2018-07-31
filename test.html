@@ -102,7 +102,7 @@
 									<br>
 									<input id="form_email" type="email" name="Email" placeholder="Your email address" required hidden>
 				 				 	<input id="form_friend" type="text" name="Friend" hidden>
-				 				 	<input id="reward" type="text" name="Reward" hidden>
+				 				 	<input id="withcompensation" type="text" name="Withcompensation" hidden> <!-- Reward checked manually so it's secure -->
 									<h5 class="name">Telegram</h5>
 									<p><input id="form_telegram" type="text" name="Telegram" placeholder="Your Telegram name" required></p>
 									<p>Join our <a href="https://t.me/webRunesGroup" target="_blank">Telegram Group</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i> to keep abreast of the events. Stay in the group until the Soft Cap is reached. Get 25 WGD as a reward.</p>
@@ -186,7 +186,7 @@
 		{
 			gform.SubmitButton.disabled = true;
 			gform.SubmitButton.value = "Please wait...";
-			document.getElementById("reward").value = "50";
+			document.getElementById("withcompensation").value = "25";
 			return true;
 		}
 	</script>
