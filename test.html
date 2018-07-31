@@ -212,12 +212,12 @@
 	<script>
 		var table;
 		var registered = false;
-		//var share = 0;
+		var total_reward = 0;
 		//var load_responses = false;
 		var load_completed = false;
 		function affiliate_balance_show()
 			{
-				//share = 0;
+				total_reward = 0;
 				/*document.getElementById("content").style.display = "none";
 				document.getElementById('opacity_airdrop').style.opacity = '0';*/
 
@@ -249,20 +249,17 @@
 				$('#loading').empty();
 				$('#loading').prepend('<img src="loading.gif" alt="Loading" width="48" height="48" />');
 
-				table = '<table class="table"><tr><th>Date</th><th>Telegram</th></tr>';
+				table = '<table class="table"><tr><th>Date</th><th>Telegram name</th></tr>';
 				url_complete = "https://spreadsheets.google.com/feeds/list/10yfHohsWi8DZSuyorxPbh-k3A4MzKsZIzssyGHFE46w/1/public/values?alt=json";
 				$.getJSON(url_complete, function(data) {
 				 document.getElementById("loading").style.display = "none";
 				 var entry = data.feed.entry;
 				 $(entry).each(function(){
 					 if (this.gsx$email.$t == email_address.value){
-						 $('#eth_balance').empty();
-						 $('#eth_balance').prepend(''+this.gsx$withcompensation.$t);
 						 registered = true;
 				 	}
 				 if (this.gsx$friend.$t == email_address.value){
-					 	console.log('friend:'+this.gsx$friend.$t);
-				 		 //share += parseInt(this.gsx$wgd.$t)/25;
+				 		 total_reward += 25;
 						 table += '<tr>';
 						 table += '<td>'+this.gsx$timestamp.$t+'</td>';
 						 table += '<td>'+this.gsx$telegram.$t+'</td>';
@@ -271,6 +268,9 @@
 				 });
 				 table += '</table>';
 				 load_completed = true;
+					 total_reward += parseInt(this.gsx$withcompensation.$t);
+					 $('#eth_balance').empty();
+					 $('#eth_balance').prepend(''+total_reward);
 				 ready();
 			 });
 			}
