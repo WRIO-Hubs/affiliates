@@ -207,13 +207,13 @@
 
 	<script>
 		var table;
-		var share = 0;
 		var registered = false;
+		//var share = 0;
 		//var load_responses = false;
 		var load_completed = false;
 		function affiliate_balance_show()
 			{
-				share = 0;
+				//share = 0;
 				/*document.getElementById("content").style.display = "none";
 				document.getElementById('opacity_airdrop').style.opacity = '0';*/
 
@@ -257,14 +257,14 @@
 						 $('#eth_balance').prepend(''+this.gsx$withcompensation.$t);
 						 registered = true;
 				 	}
-					 if (this.gsx$friend.$t == email_address.value){
-					 		 //share += parseInt(this.gsx$wgd.$t)/25;
-							 table += '<tr>';
-							 table += '<td>'+this.gsx$timestamp.$t+'</td>';
-							 table += '<td><a href="https://etherscan.io/address/'+this.gsx$ethaddress.$t+'" target="_blank">Address</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i></td>';
-							 table += '<td><a href="https://etherscan.io/tx/'+this.gsx$txhash.$t+'" target="_blank">TXhash</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i></td>';
-							 table += '<td>'+parseInt(this.gsx$wgd.$t)/25+'</td>';
-							 table += '</tr>';
+				 if (this.gsx$friend.$t == email_address.value){
+				 		 //share += parseInt(this.gsx$wgd.$t)/25;
+						 table += '<tr>';
+						 table += '<td>'+this.gsx$timestamp.$t+'</td>';
+						 table += '<td><a href="https://etherscan.io/address/'+this.gsx$ethaddress.$t+'" target="_blank">Address</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i></td>';
+						 table += '<td><a href="https://etherscan.io/tx/'+this.gsx$txhash.$t+'" target="_blank">TXhash</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i></td>';
+						 table += '<td>'+parseInt(this.gsx$wgd.$t)/25+'</td>';
+						 table += '</tr>';
 					}
 				 });
 				 load_completed = true;
