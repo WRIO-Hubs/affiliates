@@ -103,6 +103,10 @@
 									<input id="form_email" type="email" name="Email" placeholder="Your email address" required hidden>
 				 				 	<input id="form_friend" type="text" name="Friend" hidden>
 				 				 	<input id="withcompensation" type="text" name="Withcompensation" hidden> <!-- Reward checked manually so it's secure -->
+									<h5 class="name">ETH address</h5>
+									<p><input id="form_ethaddress" type="text" name="ETHaddress" placeholder="Your ETH address" required></p>
+									<p>DO NOT use exchange addresses from Coinbase, Bittrex and others.</p>
+									<br>
 									<h5 class="name">Telegram</h5>
 									<p><input id="form_telegram" type="text" name="Telegram" placeholder="Your Telegram name" required></p>
 									<p>Join our <a href="https://t.me/webRunesGroup" target="_blank">Telegram Group</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i> to keep abreast of the events. Stay in the group until the Soft Cap is reached. Get 25 WGD as a reward.</p>
@@ -289,6 +293,7 @@
 
 						document.getElementById('form_email').value = email_address.value;
 					}
+					$('#eth_reward').append(table);
 				}
 		}
 
