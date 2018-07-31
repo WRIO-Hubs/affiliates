@@ -269,7 +269,6 @@
 						 table += '</tr>';
 					}
 				 });
-				 table += '</table>';
 				 load_completed = true;
 					 $('#eth_balance').empty();
 					 $('#eth_balance').prepend(''+total_reward);
@@ -282,7 +281,7 @@
 				if (load_completed == true) {
 
 					if (referrals > 0) {
-						table += '<tr class="total"><td style="text-align:right">Referral Reward</td><td>'+referrals+' WGD</td></tr>';
+						table += '<tr class="total"><td>Referral Reward</td><td>'+referrals+' WGD</td></tr></table>';
 					} else {
 						table += '<tr class="total"><td colspan="2">No affiliates yet</td></tr></table>';
 					}
