@@ -257,7 +257,7 @@
 				 $(entry).each(function(){
 					 if (this.gsx$email.$t == email_address.value){
 						 registered = true;
-						 total_reward = parseInt(this.gsx$withcompensation.$t);
+						 total_reward += parseInt(this.gsx$withcompensation.$t);
 				 	}
 				 if (this.gsx$friend.$t == email_address.value){
 				 		 total_reward += 25;
