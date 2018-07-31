@@ -212,7 +212,7 @@
 	<script>
 		var table;
 		var registered = false;
-		var referrals = false;
+		var referrals = 0;
 		var total_reward = 0;
 		//var load_responses = false;
 		var load_completed = false;
@@ -261,7 +261,7 @@
 						 total_reward += parseInt(this.gsx$withcompensation.$t);
 				 	}
 				 if (this.gsx$friend.$t == email_address.value){
-					 	 referrals = true;
+					 	 referrals += 25;
 				 		 total_reward += 25;
 						 table += '<tr>';
 						 table += '<td>'+this.gsx$timestamp.$t+'</td>';
@@ -281,7 +281,9 @@
 			{
 				if (load_completed == true) {
 
-					if (referrals == false) {
+					if (referrals > 0) {
+						table += '<tr class="total"><td style="text-align:right">Referral Reward</td><td>'+referrals+' WGD</td></tr>';
+					else {
 						table += '<tr class="total"><td colspan="2">No affiliates yet</td></tr></table>';
 					}
 
