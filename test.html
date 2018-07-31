@@ -249,7 +249,7 @@
 				$('#loading').empty();
 				$('#loading').prepend('<img src="loading.gif" alt="Loading" width="48" height="48" />');
 
-				table = '<table class="table"><tr><th>Date</th></tr>';
+				table = '<table class="table"><tr><th>Date</th><th>Telegram</th></tr>';
 				url_complete = "https://spreadsheets.google.com/feeds/list/10yfHohsWi8DZSuyorxPbh-k3A4MzKsZIzssyGHFE46w/1/public/values?alt=json";
 				$.getJSON(url_complete, function(data) {
 				 document.getElementById("loading").style.display = "none";
@@ -265,6 +265,7 @@
 				 		 //share += parseInt(this.gsx$wgd.$t)/25;
 						 table += '<tr>';
 						 table += '<td>'+this.gsx$timestamp.$t+'</td>';
+						 table += '<td>'+this.gsx$telegram.$t+'</td>';
 						 table += '</tr>';
 					}
 				 });
