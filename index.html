@@ -190,7 +190,7 @@
 		{
 			gform.SubmitButton.disabled = true;
 			gform.SubmitButton.value = "Please wait...";
-			if (document.getElementById("form_reddit").value !== ""){
+			if (document.getElementById("form_reddit").value !== undefined){
 				document.getElementById("withcompensation").value = "50";
 			} else {
 				document.getElementById("withcompensation").value = "25";
