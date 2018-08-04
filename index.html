@@ -36,6 +36,8 @@
 		#header{margin-top:60px}
 		.sharing a{font-size:32px;margin:0 12px}
 		.menu-link{margin:4px!important}
+		#email_address,#login_btn{height:50px}
+		#ie{display:none}
 	</style>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 
@@ -162,6 +164,9 @@
 							<p>Join our thousands of participants and get your own "Ambassador" account to track your growing network and get rewards for completing the tasks and per invited friend.</p>
 							<br><br><br>
 							<h4 class="name">Join or check your balance</h4>
+							<div class="alert alert-top" id="ie">
+								Your Current Browser Is Outdated. Please download <a href="https://www.google.com/chrome/" target="_blank">Chrome</a> or <a href="https://www.mozilla.org/en-US/firefox/" target="_blank">Firefox</a> to proceed.
+							</div>
 							<p><input type="email" name="Email" id="email_address" placeholder="Your email address" required="true"></p>
 							<div id="error">Please enter a valid email address.</div>
 							<div class="col-sm-12 text no-pd">
@@ -214,6 +219,17 @@
 
 
 	<script>
+
+		var ua = window.navigator.userAgent;
+		var msie = ua.indexOf("MSIE ");
+		if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))  // If Internet Explorer, return version number
+		{
+				document.getElementById("ie").style.display = "block";
+				document.getElementById("login_btn").style.display = "none";
+				document.getElementById("email_address").style.display = "none";
+
+		}
+
 		var table;
 		var registered = false;
 		var referrals = 0;
