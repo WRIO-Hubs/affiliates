@@ -193,12 +193,16 @@
 	<script type="text/javascript">
 	function checkForm(form) // Submit button clicked
 		{
+
+								console.log(document.getElementById("form_reddit").value);
 			gform.SubmitButton.disabled = true;
 			gform.SubmitButton.value = "Please wait...";
 			if (document.getElementById("form_reddit").value !== undefined){
 				document.getElementById("withcompensation").value = "50";
+				console.log('reddit');
 			} else {
 				document.getElementById("withcompensation").value = "25";
+				console.log('telegram');
 			}
 			return true;
 		}
@@ -300,7 +304,6 @@
 			{
 				if (load_completed == true) {
 
-					console.log(document.getElementById("form_reddit").value);
 					if (referrals > 0) {
 						table += '<tr class="total"><td>Referral Reward</td><td>'+referrals+' WGD</td></tr></table>';
 					} else {
