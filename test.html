@@ -194,10 +194,10 @@
 	function checkForm(form) // Submit button clicked
 		{
 
-								console.log(document.getElementById("form_reddit").value);
+
 			gform.SubmitButton.disabled = true;
 			gform.SubmitButton.value = "Please wait...";
-			if (document.getElementById("form_reddit").value !== undefined){
+			if (document.getElementById("form_reddit").value != undefined){
 				document.getElementById("withcompensation").value = "50";
 				console.log('reddit');
 			} else {
@@ -320,6 +320,7 @@
 						var url = new URL(url_string);
 						document.getElementById("form_friend").value = url.searchParams.get("friend");
 
+console.log(document.getElementById("form_reddit").value);
 						document.getElementById("registration").style.display = "block";
 						document.getElementById('registration').style.opacity = '100';
 						document.getElementById('registration').style.transition = 'all 2000ms';
