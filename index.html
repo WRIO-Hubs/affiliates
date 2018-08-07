@@ -193,12 +193,16 @@
 	<script type="text/javascript">
 	function checkForm(form) // Submit button clicked
 		{
+
+
 			gform.SubmitButton.disabled = true;
 			gform.SubmitButton.value = "Please wait...";
-			if (document.getElementById("form_reddit").value !== undefined){
+			if (document.getElementById("form_reddit").value !== ""){
 				document.getElementById("withcompensation").value = "50";
+				console.log('reddit');
 			} else {
 				document.getElementById("withcompensation").value = "25";
+				console.log('telegram');
 			}
 			return true;
 		}
@@ -316,6 +320,7 @@
 						var url = new URL(url_string);
 						document.getElementById("form_friend").value = url.searchParams.get("friend");
 
+						document.getElementById("form_reddit").value = "";
 						document.getElementById("registration").style.display = "block";
 						document.getElementById('registration').style.opacity = '100';
 						document.getElementById('registration').style.transition = 'all 2000ms';
