@@ -193,16 +193,12 @@
 	<script type="text/javascript">
 	function checkForm(form) // Submit button clicked
 		{
-
-
 			gform.SubmitButton.disabled = true;
 			gform.SubmitButton.value = "Please wait...";
-			if (document.getElementById("form_reddit").value.length > 0 ){
+			if (document.getElementById("form_reddit").value.length > 0){
 				document.getElementById("withcompensation").value = "50";
-				console.log('reddit');
 			} else {
 				document.getElementById("withcompensation").value = "25";
-				console.log('telegram');
 			}
 			return true;
 		}
