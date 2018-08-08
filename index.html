@@ -314,7 +314,7 @@
 						//take affiliate
 						var url_string = document.URL;
 						var url = new URL(url_string);
-						//document.getElementById("form_friend").value = url.searchParams.get("friend");  must be restore later
+						document.getElementById("form_friend").value = url.searchParams.get("friend");
 
 						document.getElementById("form_reddit").value = "";
 						document.getElementById("registration").style.display = "block";
