@@ -100,12 +100,12 @@
 										<h3 class="name">Registration</h3>
 										<br>
 										<h6 class="name">Registration is now closed! Reward will be distributed within 21 days post Soft Cap is reached</h6>
-									<!--<div class="text-left">
+									<div class="text-left">
 									<br>
 									<input id="form_email" type="email" name="Email" placeholder="Your email address" required hidden>
 				 				 	<input id="form_friend" type="text" name="Friend" hidden>
 				 				 	<input id="withcompensation" type="text" name="Withcompensation" hidden>
-									<h5 class="name">ETH address</h5>
+									<!--<h5 class="name">ETH address</h5>
 									<p><input id="form_ethaddress" type="text" name="ETHaddress" placeholder="Your ETH address" required></p>
 									<p>DO NOT use exchange addresses from Coinbase, Bittrex and others.</p>
 									<br>
@@ -314,7 +314,7 @@
 						//take affiliate
 						var url_string = document.URL;
 						var url = new URL(url_string);
-						document.getElementById("form_friend").value = url.searchParams.get("friend");
+						//document.getElementById("form_friend").value = url.searchParams.get("friend");  must be restore later
 
 						document.getElementById("form_reddit").value = "";
 						document.getElementById("registration").style.display = "block";
