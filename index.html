@@ -138,12 +138,11 @@
 							<div id="opacity_affiliate">
 								<h2 class="name">Your Affiliate WGD balance is</h2>
 								<h1 id="eth_balance"></h1>
-
-								<h4>Your referral link is</h4>
-								<p><b id="affiliate_url"></b></p>
+								<div style="display:none"><h4>Your referral link is</h4>
+								<p><b id="affiliate_url"></b></p></div>
 								<p><b id="affiliate_text"></b></p>
 								<br>
-								<div class="col-sm-12 text-center sharing">
+								<div class="col-sm-12 text-center sharing" style="display:none">
 									<h4>Share on</h4>
 									<div id="share_links"></div>
 								</div>
@@ -363,7 +362,8 @@
 			} else {
 				affiliate_balance_show();
 				document.getElementById("affiliate_url").innerHTML = '<a href="https://affiliates.wr.io/?friend='+email_address.value+'" target="_blank">https://affiliates.wr.io/?friend='+email_address.value+'</a></b>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i>';
-				document.getElementById("affiliate_text").innerHTML = 'Promote the referral link in social media or in any other way and get 25 WGD reward per invited friend.<br>Reward will be distributed within 21 days post the Soft Cap is reached, a claim reward link will be sent to your email '+email_address.value;
+				//document.getElementById("affiliate_text").innerHTML = 'Promote the referral link in social media or in any other way and get 25 WGD reward per invited friend.<br>Reward will be distributed within 21 days post the Soft Cap is reached, a claim reward link will be sent to your email '+email_address.value;
+				document.getElementById("affiliate_text").innerHTML = 'Reward will be distributed within 21 days post the Soft Cap is reached, a claim reward link will be sent to your email '+email_address.value;
 				document.getElementById('part').style.display = 'none';
 			}
 		}
